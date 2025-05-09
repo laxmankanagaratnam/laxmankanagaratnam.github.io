@@ -1,12 +1,739 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meine persönliche Webseite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxman Kanagaratnam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --accent: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ecf0f1;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education, .experience, .skills {
+            background-color: var(--white);
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .education-item:last-child, .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-subtitle {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            background-color: #f1f1f1;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .language-level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .proficiency {
+            width: 100px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .proficiency span {
+            display: block;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .cv-section {
+            background-color: var(--white);
+            padding: 5rem 0;
+        }
+        
+        .cv-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cv-section h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        
+        .cv-block {
+            margin-bottom: 2rem;
+        }
+        
+        .cv-block h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cv-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item-title {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        
+        .cv-item-date {
+            color: var(--secondary-color);
+        }
+        
+        .cv-item-subtitle {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item-details {
+            padding-left: 1rem;
+        }
+        
+        .cv-item-details li {
+            margin-bottom: 0.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hi, ich bin Laxman 👋</h1>
-    <p>BSc Astronomy Student at the University of Vienna</p>
-    <p>Hier entsteht meine persönliche GitHub.io-Seite.</p>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="#">Laxman Kanagaratnam</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#cv">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm Laxman Kanagaratnam 👋</h1>
+                <p>BSc Astronomy Student at the University of Vienna</p>
+                <p>Exploring the universe through physics and astronomy</p>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a BSc Astronomy and Physics student at the University of Vienna, with a strong background in mathematics and physics. Previously, I studied Physics at ETH Zürich before transferring to the University of Vienna to pursue my passion for astronomy.</p>
+                    <p>My academic journey is driven by curiosity about the universe and a desire to contribute to the field of astrophysics. I have experience as a teaching assistant and have been involved in various research and technical projects.</p>
+                    <p>Besides my academic pursuits, I enjoy tutoring mathematics and physics, and I was formerly a member of the Chess Club Therwil.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/400/320" alt="Laxman Kanagaratnam">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="item-title">University of Vienna</div>
+                <div class="item-subtitle">BSc Astronomy & BSc Physics</div>
+                <div class="item-date">2024 - Present</div>
+            </div>
+            <div class="education-item">
+                <div class="item-title">ETH Zürich</div>
+                <div class="item-subtitle">BSc Physics (transferred to University of Vienna)</div>
+                <div class="item-date">2021 - 2023</div>
+            </div>
+            <div class="education-item">
+                <div class="item-title">Gymnasium Kirschgarten Basel</div>
+                <div class="item-subtitle">Matura specializing in Physics and Applied Mathematics</div>
+                <div class="item-date">2016 - 2021</div>
+                <p>Matura Project: "Determination of Solar Rotation Using Sunspot Observations & Construction of a Telescope Mount", supervised by PD Dr. Matthias Liebendörfer</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-item">
+                <div class="item-title">Teaching Assistant at the Veterinary University of Vienna</div>
+                <div class="item-subtitle">Teaching Assistant for Laboratory Diagnostics II</div>
+                <div class="item-date">2025</div>
+                <p>Supervised by Prof. Olga Jovanovic</p>
+            </div>
+            <div class="experience-item">
+                <div class="item-title">aCentauri Solar Racing Team at ETH Zürich</div>
+                <div class="item-subtitle">Competitor in the Bridge Stone World Solar Challenge</div>
+                <div class="item-date">2023 - 2024</div>
+            </div>
+            <div class="experience-item">
+                <div class="item-title">Teaching Assistant at ETH Zürich</div>
+                <div class="item-subtitle">Teaching Assistant and Senior Coach for Analysis I</div>
+                <div class="item-date">2023</div>
+                <p>Supervised by Prof. Alessio Figalli</p>
+            </div>
+            <div class="experience-item">
+                <div class="item-title">Physics I Formula Compendium at ETH Zürich</div>
+                <div class="item-subtitle">Co-developer</div>
+                <div class="item-date">2022 - 2023</div>
+                <p>Co-developed the official LaTeX formula compendium for Physics I (Winter Semesters 2022 & 2023), supervised by Prof. Werner Wegscheider</p>
+            </div>
+            <div class="experience-item">
+                <div class="item-title">Matura Project Exhibitor at the University of Basel</div>
+                <div class="item-date">2020</div>
+                <p>Presented Matura Project at the Saturday Morning Physics Event</p>
+                <p>Collaborated with GKGresearch</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Software</h3>
+                    <ul class="skill-list">
+                        <li>LaTeX</li>
+                        <li>Visual Studio Code</li>
+                        <li>Jupyter Notebook</li>
+                        <li>Excel</li>
+                        <li>Git</li>
+                        <li>TopCat</li>
+                        <li>Muniwin</li>
+                        <li>VStar</li>
+                        <li>Minima27</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <ul class="skill-list">
+                        <li>Windows</li>
+                        <li>Linux</li>
+                        <li>MacOS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul class="skill-list">
+                        <li>
+                            <div class="language-level">
+                                <span>German</span>
+                                <div class="proficiency">
+                                    <span style="width: 100%;"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="language-level">
+                                <span>English</span>
+                                <div class="proficiency">
+                                    <span style="width: 100%;"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="language-level">
+                                <span>Tamil</span>
+                                <div class="proficiency">
+                                    <span style="width: 100%;"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="language-level">
+                                <span>French</span>
+                                <div class="proficiency">
+                                    <span style="width: 40%;"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <h2>Curriculum Vitae</h2>
+            <div class="cv-content">
+                <div class="cv-block">
+                    <h3>EDUCATION</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">University of Vienna</span>
+                            <span class="cv-item-date">2024–Present</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>BSc Astronomy</li>
+                                <li>BSc Physics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">ETH Zürich</span>
+                            <span class="cv-item-date">2021–2023</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>BSc Physics (transferred to University of Vienna)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Gymnasium Kirschgarten Basel</span>
+                            <span class="cv-item-date">2016–2021</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Matura specializing in Physics and Applied Mathematics</li>
+                                <li>Matura Project: "Determination of Solar Rotation Using Sunspot Observations & Construction of a Telescope Mount", supervised by PD Dr. Matthias Liebendörfer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3>TEACHING</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Teaching Assistant at the Veterinary University of Vienna</span>
+                            <span class="cv-item-date">2025</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Teaching Assistant for Laboratory Diagnostics II, supervised by Prof. Olga Jovanovic</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Teaching Assistant at ETH Zürich</span>
+                            <span class="cv-item-date">2023</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Teaching Assistant and Senior Coach for Analysis I, supervised by Prof. Alessio Figalli</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3>EXPERIENCE</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">aCentauri Solar Racing Team at ETH Zürich</span>
+                            <span class="cv-item-date">2023–2024</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Competitor in the Bridge Stone World Solar Challenge 2023</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Physics I Formula Compendium at ETH Zürich</span>
+                            <span class="cv-item-date">2022–2023</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Co-developed the official LaTeX formula compendium for Physics I (Winter Semesters 2022 & 2023), supervised by Prof. Werner Wegscheider</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Matura Project Exhibitor at the University of Basel</span>
+                            <span class="cv-item-date">2020</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Presented Matura Project at the Saturday Morning Physics Event</li>
+                                <li>Collaborated with GKGresearch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3>TECHNICAL EXPERIENCE</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Programming</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Software</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>LaTeX, Visual Studio Code, Jupyter Notebook, Excel, Git, TopCat, Muniwin, VStar, Minima27</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <span class="cv-item-title">Operating System</span>
+                        </div>
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Windows, Linux, MacOS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3>LANGUAGES</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>German (native), English (fluent), Tamil (fluent), French (basic)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3>EXTRACURRICULARS</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-details">
+                            <ul>
+                                <li>Private tutor for mathematics and physics</li>
+                                <li>Former member of the Chess Club Therwil</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/laxmankanagaratnam" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://orchid.org/0009-0006-7566-4137" target="_blank"><i class="fas fa-university"></i></a>
+                <a href="mailto:a12347439@unet.univie.ac.at"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 Laxman Kanagaratnam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Update active link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
