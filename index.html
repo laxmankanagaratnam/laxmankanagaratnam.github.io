@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laxman Kanagaratnam</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
+            --primary-color: #002147; /* Oxford Blue */
+            --secondary-color: #4A90E2; /* Blue */
+            --tertiary-color: #D9E2EC; /* Light Blue Gray */
             --text-color: #333;
-            --light-bg: #f8f9fa;
+            --light-bg: #f5f7fa;
             --white: #ffffff;
-            --accent: #e74c3c;
+            --accent: #C41E3A; /* Harvard Crimson */
+            --main-font: 'Calibri Light', 'Segoe UI Light', Arial, sans-serif;
+            --header-font: 'Calibri Light', 'Segoe UI Light', Arial, sans-serif;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: var(--main-font);
         }
         
         body {
@@ -28,21 +32,21 @@
             line-height: 1.6;
         }
         
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         header {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
         }
         
         nav {
@@ -55,7 +59,8 @@
             color: var(--white);
             text-decoration: none;
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 300;
+            font-family: var(--header-font);
         }
         
         .nav-links {
@@ -71,80 +76,133 @@
             color: var(--white);
             text-decoration: none;
             transition: color 0.3s;
-            font-weight: 500;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
         
         .nav-links a:hover {
-            color: var(--secondary-color);
+            color: var(--tertiary-color);
         }
         
         .active {
-            color: var(--secondary-color) !important;
+            border-bottom: 2px solid var(--tertiary-color);
         }
         
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5f 100%);
             color: var(--white);
-            padding-top: 80px;
+            padding-top: 60px;
         }
         
         .hero-content {
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #ecf0f1;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            font-weight: 500;
-        }
-        
-        .btn:hover {
-            background-color: #2980b9;
-        }
-        
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-        
-        .about-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 3rem;
         }
         
+        .hero-text {
+            flex: 3;
+        }
+        
+        .hero-image {
+            flex: 2;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            font-family: var(--header-font);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            color: var(--tertiary-color);
+            font-family: var(--header-font);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ecf0f1;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .social-hero {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-hero a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .social-hero a:hover {
+            color: var(--tertiary-color);
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 300;
+            font-family: var(--header-font);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+        }
+        
         .about-text {
-            flex: 1;
+            flex: 3;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
         }
         
         .about-image {
-            flex: 1;
+            flex: 2;
             text-align: center;
         }
         
@@ -155,54 +213,155 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .education, .experience, .skills {
+        .education, .experience, .skills, .research, .publications {
             background-color: var(--white);
+            position: relative;
         }
         
-        .education-item, .experience-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
+        .education::before, .research::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1200/800') no-repeat center center;
+            background-size: cover;
+            opacity: 0.03;
+            z-index: 0;
         }
         
-        .education-item:last-child, .experience-item:last-child {
-            border-bottom: none;
+        .section-content {
+            position: relative;
+            z-index: 1;
         }
         
-        .item-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .item-subtitle {
-            font-size: 1rem;
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-year {
+            font-size: 0.9rem;
             color: var(--secondary-color);
             margin-bottom: 0.5rem;
         }
         
-        .item-date {
-            font-size: 0.9rem;
-            color: #777;
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-style: italic;
             margin-bottom: 1rem;
+        }
+        
+        .timeline-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            justify-content: center;
+            gap: 2rem;
         }
         
         .skill-category {
             flex: 1;
             min-width: 250px;
+            max-width: 300px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
         }
         
         .skill-category h3 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .skill-category h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .skill-list {
@@ -210,114 +369,168 @@
         }
         
         .skill-list li {
-            margin-bottom: 0.5rem;
-            background-color: #f1f1f1;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
         }
         
         .language-level {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 0.8rem;
         }
         
-        .proficiency {
-            width: 100px;
-            height: 10px;
-            background-color: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
+        .language-name {
+            font-weight: 500;
         }
         
-        .proficiency span {
-            display: block;
-            height: 100%;
+        .language-proficiency {
+            color: var(--secondary-color);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .research-content, .publications-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .research-status, .publications-status {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            padding: 2rem;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .cv-content {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .download-cv {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .download-cv:hover {
             background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .download-cv i {
+            margin-right: 0.5rem;
         }
         
         footer {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 1rem 0;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
         
         .social-links a {
             color: var(--white);
             font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: transform 0.3s, color 0.3s;
         }
         
         .social-links a:hover {
-            color: var(--secondary-color);
+            color: var(--tertiary-color);
+            transform: translateY(-3px);
         }
         
-        .cv-section {
-            background-color: var(--white);
-            padding: 5rem 0;
+        .copy-text {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--tertiary-color);
         }
         
-        .cv-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cv-section h2 {
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--primary-color);
-        }
-        
-        .cv-block {
-            margin-bottom: 2rem;
-        }
-        
-        .cv-block h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cv-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .cv-item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cv-item-title {
-            font-weight: bold;
-            color: var(--text-color);
-        }
-        
-        .cv-item-date {
-            color: var(--secondary-color);
-        }
-        
-        .cv-item-subtitle {
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cv-item-details {
-            padding-left: 1rem;
-        }
-        
-        .cv-item-details li {
-            margin-bottom: 0.3rem;
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+                left: 20px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -325,16 +538,28 @@
                 display: none;
             }
             
-            .about-content {
-                flex-direction: column;
-            }
-            
             .hero h1 {
                 font-size: 2.5rem;
             }
             
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
             .hero p {
                 font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+            
+            .timeline-title {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -352,6 +577,8 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
                     <li><a href="#cv">CV</a></li>
                 </ul>
             </nav>
@@ -361,10 +588,19 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm Laxman Kanagaratnam 👋</h1>
-                <p>BSc Astronomy Student at the University of Vienna</p>
-                <p>Exploring the universe through physics and astronomy</p>
-                <a href="#about" class="btn">Learn More</a>
+                <div class="hero-text">
+                    <h1>Laxman Kanagaratnam</h1>
+                    <h2>Astronomy & Physics Student</h2>
+                    <p>BSc student at the University of Vienna exploring the mysteries of the universe through physics and astronomy. Passionate about astrophysical research and scientific education.</p>
+                    <div class="social-hero">
+                        <a href="https://github.com/laxmankanagaratnam" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://orchid.org/0009-0006-7566-4137" target="_blank"><i class="ai ai-orcid"></i></a>
+                        <a href="mailto:a12347439@unet.univie.ac.at"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/api/placeholder/400/400" alt="Laxman Kanagaratnam">
+                </div>
             </div>
         </div>
     </section>
@@ -374,12 +610,9 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am a BSc Astronomy and Physics student at the University of Vienna, with a strong background in mathematics and physics. Previously, I studied Physics at ETH Zürich before transferring to the University of Vienna to pursue my passion for astronomy.</p>
-                    <p>My academic journey is driven by curiosity about the universe and a desire to contribute to the field of astrophysics. I have experience as a teaching assistant and have been involved in various research and technical projects.</p>
-                    <p>Besides my academic pursuits, I enjoy tutoring mathematics and physics, and I was formerly a member of the Chess Club Therwil.</p>
-                </div>
-                <div class="about-image">
-                    <img src="/api/placeholder/400/320" alt="Laxman Kanagaratnam">
+                    <p>I am currently pursuing dual bachelor's degrees in Astronomy and Physics at the University of Vienna, having transferred from ETH Zürich where I initially studied Physics. My academic journey is driven by a deep curiosity about the universe and a passion for understanding the fundamental laws that govern it.</p>
+                    <p>With a strong foundation in mathematics and physics, I have had the opportunity to serve as a teaching assistant at both ETH Zürich under Prof. Alessio Figalli and at the Veterinary University of Vienna. These experiences have not only enriched my understanding of the subjects but also honed my ability to communicate complex scientific concepts.</p>
+                    <p>My technical skills include programming in Python and proficiency in various scientific software tools. When I'm not immersed in academic pursuits, I enjoy tutoring mathematics and physics, sharing my knowledge and passion with others.</p>
                 </div>
             </div>
         </div>
@@ -388,21 +621,39 @@
     <section id="education" class="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <div class="item-title">University of Vienna</div>
-                <div class="item-subtitle">BSc Astronomy & BSc Physics</div>
-                <div class="item-date">2024 - Present</div>
-            </div>
-            <div class="education-item">
-                <div class="item-title">ETH Zürich</div>
-                <div class="item-subtitle">BSc Physics (transferred to University of Vienna)</div>
-                <div class="item-date">2021 - 2023</div>
-            </div>
-            <div class="education-item">
-                <div class="item-title">Gymnasium Kirschgarten Basel</div>
-                <div class="item-subtitle">Matura specializing in Physics and Applied Mathematics</div>
-                <div class="item-date">2016 - 2021</div>
-                <p>Matura Project: "Determination of Solar Rotation Using Sunspot Observations & Construction of a Telescope Mount", supervised by PD Dr. Matthias Liebendörfer</p>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024 - Present</div>
+                            <div class="timeline-title">University of Vienna</div>
+                            <div class="timeline-subtitle">BSc Astronomy & BSc Physics</div>
+                            <div class="timeline-text">
+                                Currently pursuing dual bachelor's degrees in Astronomy and Physics, focusing on astrophysical phenomena and the fundamental laws of nature.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021 - 2023</div>
+                            <div class="timeline-title">ETH Zürich</div>
+                            <div class="timeline-subtitle">BSc Physics</div>
+                            <div class="timeline-text">
+                                Studied Physics at one of Europe's leading technical universities before transferring to the University of Vienna to focus on astronomy.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2016 - 2021</div>
+                            <div class="timeline-title">Gymnasium Kirschgarten Basel</div>
+                            <div class="timeline-subtitle">Matura in Physics and Applied Mathematics</div>
+                            <div class="timeline-text">
+                                Completed Matura with specialization in Physics and Applied Mathematics. Conducted a Matura Project on "Determination of Solar Rotation Using Sunspot Observations & Construction of a Telescope Mount", supervised by PD Dr. Matthias Liebendörfer.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -410,34 +661,59 @@
     <section id="experience" class="experience">
         <div class="container">
             <h2 class="section-title">Experience</h2>
-            <div class="experience-item">
-                <div class="item-title">Teaching Assistant at the Veterinary University of Vienna</div>
-                <div class="item-subtitle">Teaching Assistant for Laboratory Diagnostics II</div>
-                <div class="item-date">2025</div>
-                <p>Supervised by Prof. Olga Jovanovic</p>
-            </div>
-            <div class="experience-item">
-                <div class="item-title">aCentauri Solar Racing Team at ETH Zürich</div>
-                <div class="item-subtitle">Competitor in the Bridge Stone World Solar Challenge</div>
-                <div class="item-date">2023 - 2024</div>
-            </div>
-            <div class="experience-item">
-                <div class="item-title">Teaching Assistant at ETH Zürich</div>
-                <div class="item-subtitle">Teaching Assistant and Senior Coach for Analysis I</div>
-                <div class="item-date">2023</div>
-                <p>Supervised by Prof. Alessio Figalli</p>
-            </div>
-            <div class="experience-item">
-                <div class="item-title">Physics I Formula Compendium at ETH Zürich</div>
-                <div class="item-subtitle">Co-developer</div>
-                <div class="item-date">2022 - 2023</div>
-                <p>Co-developed the official LaTeX formula compendium for Physics I (Winter Semesters 2022 & 2023), supervised by Prof. Werner Wegscheider</p>
-            </div>
-            <div class="experience-item">
-                <div class="item-title">Matura Project Exhibitor at the University of Basel</div>
-                <div class="item-date">2020</div>
-                <p>Presented Matura Project at the Saturday Morning Physics Event</p>
-                <p>Collaborated with GKGresearch</p>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-title">Teaching Assistant</div>
+                            <div class="timeline-subtitle">Veterinary University of Vienna</div>
+                            <div class="timeline-text">
+                                Teaching Assistant for Laboratory Diagnostics II under the supervision of Prof. Olga Jovanovic.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023 - 2024</div>
+                            <div class="timeline-title">aCentauri Solar Racing Team</div>
+                            <div class="timeline-subtitle">ETH Zürich</div>
+                            <div class="timeline-text">
+                                Competed in the Bridge Stone World Solar Challenge 2023 as part of ETH Zürich's solar racing team.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-title">Teaching Assistant</div>
+                            <div class="timeline-subtitle">ETH Zürich</div>
+                            <div class="timeline-text">
+                                Served as Teaching Assistant and Senior Coach for Analysis I under the supervision of Prof. Alessio Figalli.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022 - 2023</div>
+                            <div class="timeline-title">Physics I Formula Compendium</div>
+                            <div class="timeline-subtitle">ETH Zürich</div>
+                            <div class="timeline-text">
+                                Co-developed the official LaTeX formula compendium for Physics I (Winter Semesters 2022 & 2023) under the supervision of Prof. Werner Wegscheider.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-title">Matura Project Exhibitor</div>
+                            <div class="timeline-subtitle">University of Basel</div>
+                            <div class="timeline-text">
+                                Presented my Matura Project at the Saturday Morning Physics Event and collaborated with GKGresearch.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -476,220 +752,76 @@
                 </div>
                 <div class="skill-category">
                     <h3>Languages</h3>
-                    <ul class="skill-list">
-                        <li>
-                            <div class="language-level">
-                                <span>German</span>
-                                <div class="proficiency">
-                                    <span style="width: 100%;"></span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="language-level">
-                                <span>English</span>
-                                <div class="proficiency">
-                                    <span style="width: 100%;"></span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="language-level">
-                                <span>Tamil</span>
-                                <div class="proficiency">
-                                    <span style="width: 100%;"></span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="language-level">
-                                <span>French</span>
-                                <div class="proficiency">
-                                    <span style="width: 40%;"></span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="skill-list">
+                        <div class="language-level">
+                            <span class="language-name">German</span>
+                            <span class="language-proficiency">Native</span>
+                        </div>
+                        <div class="language-level">
+                            <span class="language-name">English</span>
+                            <span class="language-proficiency">Fluent</span>
+                        </div>
+                        <div class="language-level">
+                            <span class="language-name">Tamil</span>
+                            <span class="language-proficiency">Fluent</span>
+                        </div>
+                        <div class="language-level">
+                            <span class="language-name">French</span>
+                            <span class="language-proficiency">Basic</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cv" class="cv-section">
+    <section id="research" class="research">
         <div class="container">
-            <h2>Curriculum Vitae</h2>
+            <h2 class="section-title">Research Positions</h2>
+            <div class="research-content">
+                <div class="research-status">
+                    <p><i class="fas fa-hourglass-half"></i> Coming Soon</p>
+                    <p>I am actively seeking research opportunities in astrophysics and related fields. Please check back for updates or contact me directly for potential collaborations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-content">
+                <div class="publications-status">
+                    <p><i class="fas fa-pencil-alt"></i> In Progress</p>
+                    <p>My goal is to publish my BSc thesis upon completion. I am currently exploring research areas in astrophysics and solar physics, building on my earlier work with solar rotation and sunspot observations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="education">
+        <div class="container">
+            <h2 class="section-title">Curriculum Vitae</h2>
             <div class="cv-content">
-                <div class="cv-block">
-                    <h3>EDUCATION</h3>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">University of Vienna</span>
-                            <span class="cv-item-date">2024–Present</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>BSc Astronomy</li>
-                                <li>BSc Physics</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">ETH Zürich</span>
-                            <span class="cv-item-date">2021–2023</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>BSc Physics (transferred to University of Vienna)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Gymnasium Kirschgarten Basel</span>
-                            <span class="cv-item-date">2016–2021</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Matura specializing in Physics and Applied Mathematics</li>
-                                <li>Matura Project: "Determination of Solar Rotation Using Sunspot Observations & Construction of a Telescope Mount", supervised by PD Dr. Matthias Liebendörfer</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3>TEACHING</h3>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Teaching Assistant at the Veterinary University of Vienna</span>
-                            <span class="cv-item-date">2025</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Teaching Assistant for Laboratory Diagnostics II, supervised by Prof. Olga Jovanovic</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Teaching Assistant at ETH Zürich</span>
-                            <span class="cv-item-date">2023</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Teaching Assistant and Senior Coach for Analysis I, supervised by Prof. Alessio Figalli</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3>EXPERIENCE</h3>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">aCentauri Solar Racing Team at ETH Zürich</span>
-                            <span class="cv-item-date">2023–2024</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Competitor in the Bridge Stone World Solar Challenge 2023</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Physics I Formula Compendium at ETH Zürich</span>
-                            <span class="cv-item-date">2022–2023</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Co-developed the official LaTeX formula compendium for Physics I (Winter Semesters 2022 & 2023), supervised by Prof. Werner Wegscheider</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Matura Project Exhibitor at the University of Basel</span>
-                            <span class="cv-item-date">2020</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Presented Matura Project at the Saturday Morning Physics Event</li>
-                                <li>Collaborated with GKGresearch</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3>TECHNICAL EXPERIENCE</h3>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Programming</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Python</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Software</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>LaTeX, Visual Studio Code, Jupyter Notebook, Excel, Git, TopCat, Muniwin, VStar, Minima27</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <span class="cv-item-title">Operating System</span>
-                        </div>
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Windows, Linux, MacOS</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3>LANGUAGES</h3>
-                    <div class="cv-item">
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>German (native), English (fluent), Tamil (fluent), French (basic)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3>EXTRACURRICULARS</h3>
-                    <div class="cv-item">
-                        <div class="cv-item-details">
-                            <ul>
-                                <li>Private tutor for mathematics and physics</li>
-                                <li>Former member of the Chess Club Therwil</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <p>For a complete overview of my academic background, research interests, and professional experience, please download my CV.</p>
+                <a href="assets/Laxman_Kanagaratnam_CV.pdf" class="download-cv" download>
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/laxmankanagaratnam" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://orchid.org/0009-0006-7566-4137" target="_blank"><i class="fas fa-university"></i></a>
-                <a href="mailto:a12347439@unet.univie.ac.at"><i class="fas fa-envelope"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">Laxman Kanagaratnam</div>
+                <div class="social-links">
+                    <a href="https://github.com/laxmankanagaratnam" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://orchid.org/0009-0006-7566-4137" target="_blank"><i class="ai ai-orcid"></i></a>
+                    <a href="mailto:a12347439@unet.univie.ac.at"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="copy-text">&copy; 2025 Laxman Kanagaratnam. All rights reserved.</p>
             </div>
-            <p>&copy; 2025 Laxman Kanagaratnam. All rights reserved.</p>
         </div>
     </footer>
 
@@ -729,11 +861,4 @@
             
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                if (link.getAttribute('href') === `#${current}`)
