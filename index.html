@@ -1,885 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="ED8T8fXIkeAnCf_O30Sc8ZE0vodMEgtw0tzs3NkbesI" />
-    <title>Laxman Kanagaratnam</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
-    <style>
-        :root {
-            --primary-color: #002147; /* Oxford Blue */
-            --secondary-color: #4A90E2; /* Blue */
-            --tertiary-color: #D9E2EC; /* Light Blue Gray */
-            --text-color: #333;
-            --light-bg: #f5f7fa;
-            --white: #ffffff;
-            --accent: #C41E3A; /* Harvard Crimson */
-            --main-font: 'Calibri Light', 'Segoe UI Light', Arial, sans-serif;
-            --header-font: 'Calibri Light', 'Segoe UI Light', Arial, sans-serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--main-font);
-        }
-        
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 300;
-            font-family: var(--header-font);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-links a:hover {
-            color: var(--tertiary-color);
-        }
-        
-        .active {
-            border-bottom: 2px solid var(--tertiary-color);
-        }
-        
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5f 100%);
-            color: var(--white);
-            padding-top: 60px;
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-        }
-        
-        .hero-text {
-            flex: 3;
-        }
-        
-        .hero-image {
-            flex: 2;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            border: 4px solid var(--white);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-            font-family: var(--header-font);
-        }
-        
-        .hero h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            color: var(--tertiary-color);
-            font-family: var(--header-font);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #ecf0f1;
-            max-width: 600px;
-            line-height: 1.8;
-        }
-        
-        .social-hero {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .social-hero a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: transform 0.3s, color 0.3s;
-        }
-        
-        .social-hero a:hover {
-            color: var(--tertiary-color);
-            transform: translateY(-3px);
-        }
-        
-        section {
-            padding: 6rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            font-weight: 300;
-            font-family: var(--header-font);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 0.5rem auto 0;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4rem;
-        }
-        
-        .about-text {
-            flex: 3;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-image {
-            flex: 2;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .education, .experience, .skills, .research, .publications {
-            background-color: var(--white);
-            position: relative;
-        }
-        
-        .education::before, .research::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('/api/placeholder/1200/800') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
-	pointer-events: none;
-        }
-        
-        .section-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 3rem;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--white);
-            border: 4px solid var(--secondary-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: var(--light-bg);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .timeline-year {
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .timeline-subtitle {
-            font-size: 1rem;
-            color: var(--text-color);
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        
-        .timeline-text {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            background-color: var(--light-bg);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .skill-category h3::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 2px;
-            background-color: var(--secondary-color);
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .skill-list li::before {
-            content: '•';
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-        
-        .language-level {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-        
-        .language-name {
-            font-weight: 500;
-        }
-        
-        .language-proficiency {
-            color: var(--secondary-color);
-            font-style: italic;
-            font-size: 0.9rem;
-        }
-        
-        .research-content, .publications-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .research-status, .publications-status {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            padding: 2rem;
-            background-color: var(--light-bg);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .cv-content {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--light-bg);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .download-cv {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: background-color 0.3s, transform 0.3s;
-            margin-top: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .download-cv:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .download-cv i {
-            margin-right: 0.5rem;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: transform 0.3s, color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--tertiary-color);
-            transform: translateY(-3px);
-        }
-        
-        .copy-text {
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--tertiary-color);
-        }
-        
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-image {
-                margin-top: 2rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after {
-                left: 20px;
-            }
-            
-            .timeline-item:nth-child(odd)::after {
-                right: auto;
-                left: 20px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .timeline-content {
-                padding: 15px;
-            }
-            
-            .timeline-title {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <!-- Google-Verification -->
+  <meta name="google-site-verification" content="ED8T8fXIkeAnCf_O30Sc8ZE0vodMEgtw0tzs3NkbesI">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Laxman Kanagaratnam</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- UIkit -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit-icons.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="#">Laxman Kanagaratnam</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#cv">CV</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Laxman Kanagaratnam</h1>
-                    <h2>Astronomy & Physics Student</h2>
-                    <p>BSc student at the University of Vienna, navigating the cosmos, one question at a time. Passionate about astrophysical research and scientific education.</p>
-                    <div class="social-hero">
-                        <a href="https://github.com/laxmankanagaratnam" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://orchid.org/0009-0006-7566-4137" target="_blank"><i class="ai ai-orcid"></i></a>
-                        <a href="mailto:a12347439@unet.univie.ac.at"><i class="fas fa-envelope"></i></a>
-                    </div>
+<header uk-sticky>
+  <div class="uk-container">
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="/">Laxman Kanagaratnam</a>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav uk-visible@m" uk-scrollspy-nav="closest: li; scroll: true; offset: 80">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+        <a class="uk-navbar-toggle uk-hidden@m" uk-toggle="target: #offcanvas" uk-navbar-toggle-icon></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="offcanvas" uk-offcanvas="flip:true; overlay:true">
+  <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+      <li><a href="#about" uk-scroll>About</a></li>
+      <li><a href="#education" uk-scroll>Education</a></li>
+      <li><a href="#experience" uk-scroll>Experience</a></li>
+      <li><a href="#research" uk-scroll>Research</a></li>
+      <li><a href="#teaching" uk-scroll>Teaching</a></li>
+      <li><a href="#publications" uk-scroll>Publications</a></li>
+      <li><a href="#cv" uk-scroll>CV</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+<!-- ===== About ===== -->
+<section id="about" class="uk-section">
+  <div class="uk-container">
+    <div class="uk-grid-match uk-grid-large" uk-grid>
+
+      <!-- Großes Portrait links (nur Desktop) -->
+      <div class="uk-visible@m uk-width-1-4@m">
+        <div class="uk-cover-container">
+          <img src="assets/images/me.JPG" alt="Laxman Kanagaratnam" uk-cover>
+          <canvas width="400" height="500"></canvas>
+        </div>
+      </div>
+
+      <!-- Rechte 3/4-Spalte -->
+      <div class="uk-width-3-4@m">
+        <div class="uk-margin-medium-top uk-margin-medium-bottom">
+          <div class="uk-grid-large" uk-grid>
+
+            <!-- Text (3/5) -->
+            <div class="uk-width-3-5@m uk-text-justify">
+
+              <div class="uk-grid-large" uk-grid>
+                <!-- kleines Rundbild nur Mobile -->
+                <div class="uk-width-auto@s uk-hidden@m">
+                  <img class="uk-border-circle" src="assets/images/me.JPG" width="160" alt="Laxman Kanagaratnam" uk-img>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/images/me.JPG" alt="Laxman Kanagaratnam">
+
+                <div class="uk-width-expand@s">
+                  <p>I am a bachelor student in Astronomy &amp; Physics at the University of Vienna, fascinated by star formation, large-scale Galactic structures and Exoplanets. My goal is to publish my first paper with my bachelor thesis. </p>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am currently pursuing dual bachelor's degrees in Astronomy and Physics at the University of Vienna. My academic journey is driven by a deep curiosity about the universe and a passion for understanding the fundamental laws that govern it.</p>
-                    <p>With a strong foundation in mathematics and physics, I have had the opportunity to serve as a teaching assistant at both ETH Zürich under Prof. Alessio Figalli and at the Veterinary University of Vienna. These experiences have not only enriched my understanding of the subjects but also honed my ability to communicate complex scientific concepts.</p>
-                    <p>My technical skills include programming in Python and proficiency in various scientific software tools. When I'm not immersed in academic pursuits, I enjoy tutoring mathematics and physics, sharing my knowledge and passion with others.</p>
-                </div>
+            <!-- Kontakt / Links (2/5) -->
+            <div class="uk-width-2-5@m">
+              <a class="uk-display-block uk-margin-small-bottom" href="mailto:a12347439@unet.univie.ac.at">
+                <span uk-icon="mail"></span> a12347439@unet.univie.ac.at
+              </a>
+
+              <ul class="uk-iconnav">
+                <li><a href="https://github.com/laxmankanagaratnam" uk-icon="github" uk-tooltip="GitHub"></a></li>
+                <li><a href="https://orcid.org/0009-0006-7566-4137" uk-icon="link" uk-tooltip="ORCID"></a></li>
+              </ul>
             </div>
-        </div>
-    </section>
 
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="section-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2024 - Present</div>
-                            <div class="timeline-title">University of Vienna</div>
-                            <div class="timeline-subtitle">BSc Astronomy & BSc Physics</div>
-                            <div class="timeline-text">
-                                Currently pursuing dual bachelor's degrees in Astronomy and Physics, focusing on astrophysical phenomena and the fundamental laws of nature.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2021 - 2023</div>
-                            <div class="timeline-title">ETH Zürich</div>
-                            <div class="timeline-subtitle">BSc Physics</div>
-                            <div class="timeline-text">
-                                Started studying Physics in Zurich before transferring to the University of Vienna to focus on astronomy.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2016 - 2021</div>
-                            <div class="timeline-title">Gymnasium Kirschgarten Basel</div>
-                            <div class="timeline-subtitle">Matura in Physics and Applied Mathematics</div>
-                            <div class="timeline-text">
-                                Completed Matura with specialization in Physics and Applied Mathematics. Conducted a Matura Project on "Determination of Solar Rotation Using Sunspot Observations & Construction of a Telescope Mount", supervised by PD Dr. Matthias Liebendörfer.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="section-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2025</div>
-                            <div class="timeline-title">Teaching Assistant</div>
-                            <div class="timeline-subtitle">Veterinary University of Vienna</div>
-                            <div class="timeline-text">
-                                Teaching Assistant for Laboratory Diagnostics II under the supervision of Prof. Olga Jovanovic.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2023 - 2024</div>
-                            <div class="timeline-title">aCentauri Solar Racing Team</div>
-                            <div class="timeline-subtitle">ETH Zürich</div>
-                            <div class="timeline-text">
-                                Competed in the Bridge Stone World Solar Challenge 2023 as part of ETH Zürich's solar racing team.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2023</div>
-                            <div class="timeline-title">Teaching Assistant</div>
-                            <div class="timeline-subtitle">ETH Zürich</div>
-                            <div class="timeline-text">
-                                Served as Teaching Assistant and Senior Coach for Analysis I under the supervision of Prof. Alessio Figalli.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2022 - 2023</div>
-                            <div class="timeline-title">Physics I Formula Compendium</div>
-                            <div class="timeline-subtitle">ETH Zürich</div>
-                            <div class="timeline-text">
-                                Co-developed the official LaTeX formula compendium for Physics I (Winter Semesters 2022 & 2023) under the supervision of Prof. Werner Wegscheider.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-year">2020</div>
-                            <div class="timeline-title">Matura Project Exhibitor</div>
-                            <div class="timeline-subtitle">University of Basel</div>
-                            <div class="timeline-text">
-                                Presented my Matura Project at the Saturday Morning Physics Event and collaborated with GKGresearch.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Software</h3>
-                    <ul class="skill-list">
-                        <li>LaTeX</li>
-                        <li>Visual Studio Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Excel</li>
-                        <li>Git</li>
-                        <li>TopCat</li>
-                        <li>Muniwin</li>
-                        <li>VStar</li>
-                        <li>Minima27</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Operating Systems</h3>
-                    <ul class="skill-list">
-                        <li>Windows</li>
-                        <li>Linux</li>
-                        <li>MacOS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <div class="language-level">
-                            <span class="language-name">German</span>
-                            <span class="language-proficiency">Native</span>
-                        </div>
-                        <div class="language-level">
-                            <span class="language-name">English</span>
-                            <span class="language-proficiency">Fluent</span>
-                        </div>
-                        <div class="language-level">
-                            <span class="language-name">Tamil</span>
-                            <span class="language-proficiency">Fluent</span>
-                        </div>
-                        <div class="language-level">
-                            <span class="language-name">French</span>
-                            <span class="language-proficiency">Basic</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== Education ===== -->
+<section id="education" class="uk-section uk-section-muted">
+  <div class="uk-container">
+    <h2>Education</h2>
+    <ul class="uk-list uk-list-divider uk-width-4-5@m">
+      <li>
+        <h4 class="uk-margin-remove">BSc Astronomy &amp; BSc Physics</h4>
+        <div class="uk-text-muted">University of Vienna · 2024 – present</div>
+      </li>
+      <li>
+    </ul>
+  </div>
+</section>
 
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Research Positions</h2>
-            <div class="research-content">
-                <div class="research-status">
-                    <p><i class="fas fa-hourglass-half"></i> Coming Soon</p>
-                    <p>I am actively seeking research opportunities in astrophysics and related fields. Please check back for updates or contact me directly for potential collaborations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== Experience ===== -->
+<section id="experience" class="uk-section">
+  <div class="uk-container">
+    <h2>Experience</h2>
+    <ul class="uk-list uk-list-divider uk-width-4-5@m">
+      <li>
+        <h4 class="uk-margin-remove">Teaching Assistant – Lab Diagnostics II</h4>
+        <div class="uk-text-muted">Vet Med Uni Vienna · 2025</div>
+      </li>
+      <li>
+        <h4 class="uk-margin-remove">Senior Coach – Analysis I</h4>
+        <div class="uk-text-muted">ETH Zürich · 2023</div>
+      </li>
+      <li>
+        <h4 class="uk-margin-remove">Team Member – World Solar Challenge</h4>
+        <div class="uk-text-muted">aCentauri Solar Racing · 2023 – 2024</div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-content">
-                <div class="publications-status">
-                    <p><i class="fas fa-pencil-alt"></i> In Progress</p>
-                    <p>My goal is to publish my BSc thesis upon completion. I am currently exploring research areas in large scale astrophysics in our solar neighbourhood.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== Research ===== -->
+<section id="research" class="uk-section uk-section-muted">
+  <div class="uk-container">
+    <h2>Research Positions</h2>
+    <p class="uk-text-lead uk-width-4-5@m">Currently seeking a summer studentship in stellar populations and star-formation physics to deepen my data-analysis expertise.</p>
+  </div>
+</section>
 
-    <section id="cv" class="education">
-        <div class="container">
-            <h2 class="section-title">Curriculum Vitae</h2>
-            <div class="cv-content">
-                <p>For a complete overview of my academic background, research interests, and professional experience, please download my CV.</p>
-                <a href="assets/docs/laxman.pdf" class="download-cv" download>
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- ===== Teaching ===== -->
+<section id="teaching" class="uk-section">
+  <div class="uk-container">
+    <h2>Teaching</h2>
+    <ul class="uk-list uk-list-divider uk-width-4-5@m">
+      <li>
+        <h4 class="uk-margin-remove">Private Tutor – Mathematics &amp; Physics</h4>
+        <div class="uk-text-muted">2019 – present</div>
+      </li>
+      <li>
+        <h4 class="uk-margin-remove">Guest Trainer – Visual Data Analysis Workshop</h4>
+        <div class="uk-text-muted">Digital iLab, Uni Vienna · 2021</div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Laxman Kanagaratnam</div>
-                <div class="social-links">
-                    <a href="https://github.com/laxmankanagaratnam" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://orchid.org/0009-0006-7566-4137" target="_blank"><i class="ai ai-orcid"></i></a>
-                    <a href="mailto:a12347439@unet.univie.ac.at"><i class="fas fa-envelope"></i></a>
-                </div>
-                <p class="copy-text">&copy; 2025 Laxman Kanagaratnam. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<!-- ===== Publications ===== -->
+<section id="publications" class="uk-section uk-section-muted">
+  <div class="uk-container">
+    <h2>Publications</h2>
+    <p class="uk-text-lead">In preparation – aiming to publish my BSc thesis (first-author) by 2026.</p>
+  </div>
+</section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Update active link
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-        
-        // Update active link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Add a slight delay before scrolling to top on page load
-       window.addEventListener('load', () => {
-        setTimeout(() => {
-            if (window.location.hash) {
-                const id = window.location.hash.substring(1);
-                document.getElementById(id).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        }, 300);
-    });
-</script>
+<!-- ===== CV ===== -->
+<section id="cv" class="uk-section uk-section-muted uk-padding-small">
+  <div class="uk-container">
+
+    <div class="uk-card uk-card-default uk-card-body uk-flex uk-flex-center">
+      <div class="uk-text-center">
+        <h3 class="uk-card-title uk-margin-small-bottom">Curriculum&nbsp;Vitae</h3>
+
+        <a href="assets/docs/laxman.pdf" download
+           class="uk-button uk-button-default uk-button-large">
+          <span uk-icon="download" class="uk-margin-small-right"></span>
+          Download&nbsp;PDF
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<a href="#" uk-totop uk-scroll></a>
+</main>
+
+<footer class="uk-section uk-section-small uk-text-center">
+  <div class="uk-container uk-text-meta">
+    &copy; 2025 Laxman Kanagaratnam · Built with <a href="https://getuikit.com">UIkit 3</a>
+  </div>
+</footer>
+
 </body>
 </html>
