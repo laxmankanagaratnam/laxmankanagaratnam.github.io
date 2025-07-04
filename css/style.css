@@ -1,0 +1,43 @@
+/* --------  Global type  -------- */
+html { font-family: 'Inter', system-ui, sans-serif; }
+
+/* --------  Basic colour palette  -------- */
+:root{
+  --c-accent:#0067b8;   /* links / icons */
+  --c-light: #f7f7f7;   /* muted sections */
+}
+
+/* --------  Section backgrounds  -------- */
+.uk-section-muted{ background:var(--c-light); }
+
+/* --------  Navbar & normal links  -------- */
+.uk-logo,
+.uk-navbar-item,
+.uk-navbar-nav>li>a{ color:#222; }
+.uk-navbar-item:hover,
+.uk-navbar-nav>li>a:hover,
+a{ color:var(--c-accent); }
+
+/* --------  Icon buttons  -------- */
+.uk-icon-button{
+  border-radius:50%;
+  color:#555;
+  transition:transform .2s, color .2s;
+}
+.uk-icon-button:hover{
+  color:var(--c-accent);
+  transform:translateY(-3px);
+}
+
+/* --------  List dividers  -------- */
+.uk-list-divider>li:nth-child(n+2)::before{
+  border-top-color:rgba(0,0,0,.08);
+}
+
+/* --------  CV card  -------- */
+#cv .uk-card{
+  max-width:420px;           /* nice narrow card */
+  margin:0 auto;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
