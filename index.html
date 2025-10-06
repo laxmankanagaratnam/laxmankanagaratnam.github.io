@@ -2,20 +2,326 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Google-Verification -->
   <meta name="google-site-verification" content="ED8T8fXIkeAnCf_O30Sc8ZE0vodMEgtw0tzs3NkbesI">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Laxman Kanagaratnam</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- UIkit -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css">
-  <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit-icons.min.js"></script>
+
+  <style>
+    /* --------  Global & Smooth Scroll  -------- */
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    html {
+      font-family: 'Inter', system-ui, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* --------  Color Palette  -------- */
+    :root {
+      --c-accent: #0067b8;
+      --c-accent-hover: #005a9e;
+      --c-light: #f7f7f7;
+      --c-border: rgba(0,0,0,.06);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* --------  Section Backgrounds  -------- */
+    .uk-section {
+      padding: 80px 0;
+    }
+
+    .uk-section-muted {
+      background: var(--c-light);
+    }
+
+    /* --------  Navbar  -------- */
+    header {
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: var(--transition);
+    }
+
+    .uk-logo,
+    .uk-navbar-item,
+    .uk-navbar-nav > li > a {
+      color: #222;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .uk-navbar-item:hover,
+    .uk-navbar-nav > li > a:hover,
+    a {
+      color: var(--c-accent);
+      text-decoration: none;
+    }
+
+    .uk-navbar-nav > li.uk-active > a {
+      color: var(--c-accent);
+      position: relative;
+    }
+
+    .uk-navbar-nav > li.uk-active > a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 3px;
+      background: var(--c-accent);
+      border-radius: 2px;
+    }
+
+    /* --------  Typography  -------- */
+    h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #222;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--c-accent);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-weight: 600;
+      color: #333;
+    }
+
+    h4 {
+      font-weight: 600;
+      color: #222;
+    }
+
+    .uk-text-lead {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* --------  About Section  -------- */
+    #about .uk-cover-container {
+      max-width: 280px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: var(--transition);
+    }
+
+    #about .uk-cover-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+
+    #about .uk-border-circle {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: var(--transition);
+    }
+
+    #about .uk-border-circle:hover {
+      transform: scale(1.05);
+    }
+
+    /* --------  Icon Links  -------- */
+    .uk-iconnav > * > a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--c-light);
+      color: #555;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .uk-iconnav > * > a:hover {
+      background: var(--c-accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--c-light);
+      border-radius: 8px;
+      transition: var(--transition);
+      color: #333;
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      background: var(--c-accent);
+      color: white;
+      transform: translateX(5px);
+    }
+
+    /* --------  Timeline Items  -------- */
+    .timeline-item {
+      position: relative;
+      padding: 24px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: var(--transition);
+      border-left: 4px solid var(--c-accent);
+      margin-bottom: 20px;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .timeline-item h4 {
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .timeline-item .uk-text-muted {
+      color: #777;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .timeline-item .uk-text-muted::before {
+      content: '📍';
+      font-size: 0.9rem;
+    }
+
+    /* --------  CV Card  -------- */
+    #cv .uk-card {
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      border: 2px solid var(--c-border);
+      transition: var(--transition);
+      background: white;
+    }
+
+    #cv .uk-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+      border-color: var(--c-accent);
+    }
+
+    .uk-button-default {
+      background: var(--c-accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 12px 32px;
+    }
+
+    .uk-button-default:hover {
+      background: var(--c-accent-hover);
+      transform: scale(1.05);
+      color: white;
+    }
+
+    /* --------  Publications Section  -------- */
+    .publication-card {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--c-accent);
+      max-width: 800px;
+    }
+
+    /* --------  Footer  -------- */
+    footer {
+      background: #222;
+      color: #999;
+      padding: 32px 0;
+    }
+
+    footer a {
+      color: var(--c-accent);
+      transition: var(--transition);
+    }
+
+    footer a:hover {
+      color: var(--c-accent-hover);
+    }
+
+    /* --------  Scroll to Top  -------- */
+    .uk-totop {
+      background: var(--c-accent);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .uk-totop:hover {
+      background: var(--c-accent-hover);
+      transform: translateY(-4px);
+      color: white;
+    }
+
+    /* --------  Animations  -------- */
+    .uk-scrollspy-inview {
+      opacity: 1;
+    }
+
+    /* --------  List Dividers  -------- */
+    .uk-list-divider > li:nth-child(n+2) {
+      margin-top: 0;
+      padding-top: 0;
+      border: none;
+    }
+
+    /* --------  Responsive  -------- */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      .uk-section {
+        padding: 60px 0;
+      }
+
+      .timeline-item {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -65,47 +371,42 @@
   <div class="uk-container">
     <div class="uk-grid-match uk-grid-large" uk-grid>
 
-      <!-- Großes Portrait links -->
-      <div class="uk-width-1-1 uk-width-1-4@m">
+      <!-- Portrait -->
+      <div class="uk-width-1-1 uk-width-1-4@m" uk-scrollspy="cls: uk-animation-fade; delay: 200">
         <div class="uk-cover-container">
           <img src="assets/images/me.JPG" alt="Laxman Kanagaratnam" uk-cover>
           <canvas width="400" height="500"></canvas>
         </div>
       </div>
 
-      <!-- Rechte 3/4-Spalte -->
-      <div class="uk-width-3-4@m">
+      <!-- Content -->
+      <div class="uk-width-3-4@m" uk-scrollspy="cls: uk-animation-fade; delay: 300">
         <div class="uk-margin-medium-top uk-margin-medium-bottom">
-          <div class="uk-grid-large" uk-grid>
-
-            <!-- Text (3/5) -->
-            <div class="uk-width-3-5@m uk-text-justify">
-
-              <div class="uk-grid-large" uk-grid>
-                <!-- kleines Rundbild nur Mobile -->
-                <div class="uk-width-auto@s uk-hidden@m">
-                  <img class="uk-border-circle" src="assets/images/me.JPG" width="160" alt="Laxman Kanagaratnam" uk-img>
-                </div>
-
-                <div class="uk-width-expand@s">
-                  <p>I am a bachelor student in Astronomy &amp; Physics at the University of Vienna, fascinated by star formation, large-scale Galactic structures and Exoplanets. My goal is to publish my first paper with my bachelor thesis. </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Kontakt / Links (2/5) -->
-            <div class="uk-width-2-5@m">
-              <a class="uk-display-block uk-margin-small-bottom" href="mailto:a12347439@unet.univie.ac.at">
-                <span uk-icon="mail"></span> a12347439@unet.univie.ac.at
-              </a>
-
-              <ul class="uk-iconnav">
-                <li><a href="https://github.com/laxmankanagaratnam" uk-icon="github" uk-tooltip="GitHub"></a></li>
-                <li><a href="https://orcid.org/0009-0006-7566-4137" uk-icon="link" uk-tooltip="ORCID"></a></li>
-              </ul>
-            </div>
-
+          
+          <!-- Mobile Image -->
+          <div class="uk-hidden@m uk-text-center uk-margin-bottom">
+            <img class="uk-border-circle" src="assets/images/me.JPG" width="160" alt="Laxman Kanagaratnam" uk-img>
           </div>
+
+          <!-- Text -->
+          <div class="uk-text-justify uk-margin-bottom">
+            <p class="uk-text-lead">I'm currently pursuing a double bachelor's degree in Astronomy and Physics at the University of Vienna. My curiosity lies in how stars and planets form and how our Galaxy is structured on large scales. As part of the Alves Lab, I'm working on my bachelor thesis and aiming to publish my first scientific paper.</p>
+          </div>
+
+          <!-- Contact -->
+          <div class="uk-margin-top">
+            <a class="contact-link uk-margin-small-bottom" href="mailto:a12347439@unet.univie.ac.at">
+              <span uk-icon="mail"></span>
+              <span>a12347439@unet.univie.ac.at</span>
+            </a>
+
+            <ul class="uk-iconnav uk-margin-top">
+              <li><a href="https://github.com/laxmankanagaratnam" uk-icon="github" uk-tooltip="GitHub"></a></li>
+              <li><a href="https://orcid.org/0009-0006-7566-4137" uk-icon="link" uk-tooltip="ORCID"></a></li>
+              <li><a href="https://www.researchgate.net/profile/Laxman-Kanagaratnam" uk-icon="world" uk-tooltip="ResearchGate"></a></li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
@@ -116,73 +417,105 @@
 <!-- ===== Education ===== -->
 <section id="education" class="uk-section uk-section-muted">
   <div class="uk-container">
-    <h2>Education</h2>
-    <ul class="uk-list uk-list-divider uk-width-4-5@m">
-      <li>
-        <h4 class="uk-margin-remove">BSc Astronomy &amp; BSc Physics</h4>
+    <h2 uk-scrollspy="cls: uk-animation-slide-bottom-small">Education</h2>
+    <div class="uk-width-4-5@m" uk-scrollspy="cls: uk-animation-fade; target: .timeline-item; delay: 150">
+      <div class="timeline-item">
+        <h4>BSc Astronomy</h4>
         <div class="uk-text-muted">University of Vienna · 2024 – present</div>
-      </li>
-      <li>
-    </ul>
+      </div>
+      <div class="timeline-item">
+        <h4>BSc Physics</h4>
+        <div class="uk-text-muted">University of Vienna · 2025 – present</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Experience ===== -->
+<section id="experience" class="uk-section">
+  <div class="uk-container">
+    <h2 uk-scrollspy="cls: uk-animation-slide-bottom-small">Experience</h2>
+    <div class="uk-width-4-5@m" uk-scrollspy="cls: uk-animation-fade; target: .timeline-item; delay: 150">
+      <div class="timeline-item">
+        <h4>aCentauri Solar Racing Team</h4>
+        <div class="uk-text-muted">ETH Zürich · 2023 – 2024</div>
+        <p class="uk-margin-small-top">Competed in the <strong>Bridgestone World Solar Challenge 2023</strong></p>
+      </div>
+      <div class="timeline-item">
+        <h4>Physics I Formula Compendium</h4>
+        <div class="uk-text-muted">ETH Zürich · 2022 – 2023</div>
+        <p class="uk-margin-small-top">Co-developed the official <strong>LaTeX formula collection</strong> for Physics I, supervised by Prof. Werner Wegscheider</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Matura Project Exhibitor</h4>
+        <div class="uk-text-muted">University of Basel · 2020</div>
+        <p class="uk-margin-small-top">Presented Matura project at the <strong>Saturday Morning Physics</strong> event</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== Research ===== -->
 <section id="research" class="uk-section uk-section-muted">
   <div class="uk-container">
-    <h2>Research Positions</h2>
-    <p class="uk-text-lead uk-width-4-5@m">Currently studying in my bachelor.</p>
+    <h2 uk-scrollspy="cls: uk-animation-slide-bottom-small">Research Positions</h2>
+    <div class="uk-width-4-5@m" uk-scrollspy="cls: uk-animation-fade; target: .timeline-item; delay: 150">
+      <div class="timeline-item">
+        <h4>Member of the Alves Lab</h4>
+        <div class="uk-text-muted">University of Vienna · 2024 – present</div>
+        <p class="uk-margin-small-top">Research group led by <strong>Prof. João Alves</strong>, focusing on star formation and large-scale Galactic structures</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== Teaching ===== -->
 <section id="teaching" class="uk-section">
   <div class="uk-container">
-    <h2>Teaching</h2>
-    <ul class="uk-list uk-list-divider uk-width-4-5@m">
-      <li>
-        <h4 class="uk-margin-remove">Teaching Assistant – Medical Physics Lab</h4>
-        <div class="uk-text-muted">Vet Med Uni Vienna · 2025</div>
-      </li>
-      <li>
-        <h4 class="uk-margin-remove">Teaching Assistant and Senior Coach – Analysis I</h4>
+    <h2 uk-scrollspy="cls: uk-animation-slide-bottom-small">Teaching</h2>
+    <div class="uk-width-4-5@m" uk-scrollspy="cls: uk-animation-fade; target: .timeline-item; delay: 150">
+      <div class="timeline-item">
+        <h4>Teaching Assistant</h4>
+        <div class="uk-text-muted">Veterinary University of Vienna · 2025</div>
+        <p class="uk-margin-small-top">Medical Physics Laboratory, supervised by <strong>Dr. Olga Jovanovic</strong></p>
+      </div>
+      <div class="timeline-item">
+        <h4>Teaching Assistant</h4>
         <div class="uk-text-muted">ETH Zürich · 2023</div>
-      </li>
-      <li>
-        <h4 class="uk-margin-remove">Private Tutor – Mathematics &amp; Physics</h4>
-        <div class="uk-text-muted">2015 – present</div>
-      </li>
-    </ul>
+        <p class="uk-margin-small-top">Analysis I (Calculus I) course, supervised by <strong>Prof. Alessio Figalli</strong></p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== Publications ===== -->
 <section id="publications" class="uk-section uk-section-muted">
   <div class="uk-container">
-    <h2>Publications</h2>
-    <p class="uk-text-lead">In preparation – aiming to publish my BSc thesis (first-author) by 2026.</p>
+    <h2 uk-scrollspy="cls: uk-animation-slide-bottom-small">Publications</h2>
+    <div class="uk-width-4-5@m" uk-scrollspy="cls: uk-animation-fade; target: .timeline-item; delay: 150">
+      <div class="timeline-item">
+        <h4>Bachelor Thesis (in preparation)</h4>
+        <div class="uk-text-muted">Expected publication · 2026</div>
+        <p class="uk-margin-small-top">Aiming to publish my BSc thesis as <strong>first-author</strong></p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== CV ===== -->
-<section id="cv" class="uk-section uk-section-muted uk-padding-small">
+<section id="cv" class="uk-section">
   <div class="uk-container">
-
-    <div class="uk-card uk-card-default uk-card-body uk-flex uk-flex-center">
+    <div class="uk-card uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-scale-up">
       <div class="uk-text-center">
-        <h3 class="uk-card-title uk-margin-small-bottom">Curriculum&nbsp;Vitae</h3>
-
-        <a href="assets/docs/laxman.pdf" download
-           class="uk-button uk-button-default uk-button-large">
+        <h3 class="uk-card-title uk-margin-small-bottom">Curriculum Vitae</h3>
+        <a href="assets/docs/laxman.pdf" download class="uk-button uk-button-default uk-button-large">
           <span uk-icon="download" class="uk-margin-small-right"></span>
-          Download&nbsp;PDF
+          Download PDF
         </a>
       </div>
     </div>
-
   </div>
 </section>
-
 
 <a href="#" uk-totop uk-scroll></a>
 </main>
