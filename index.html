@@ -326,6 +326,29 @@
 
 <body>
 
+<script>
+// Scroll ein bisschen weiter nach unten für besseres Navbar-Tracking
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.uk-navbar-nav a[href^="#"]');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      if (targetSection) {
+        const offset = 100;
+        const targetPosition = targetSection.offsetTop - offset;
+        
+        // UIkit's scroll mit duration parameter
+        UIkit.scroll(this, {duration: 600, offset: offset}).scrollTo(targetSection);
+      }
+    });
+  });
+});
+</script>
+
 <header uk-sticky>
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
@@ -333,7 +356,7 @@
         <a class="uk-navbar-item uk-logo" href="/">Laxman Kanagaratnam</a>
       </div>
       <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav uk-visible@m" uk-scrollspy-nav="closest: li; scroll: true; offset: 80">
+        <ul class="uk-navbar-nav uk-visible@m" uk-scrollspy-nav="closest: li; scroll: true; offset: 150">
           <li><a href="#about">About</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
