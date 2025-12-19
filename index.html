@@ -19,12 +19,12 @@
   <style>
     /* --------  Global & Smooth Scroll  -------- */
     * {
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; removed to avoid conflict with UIkit */
     }
     
     html {
       font-family: 'Inter', system-ui, sans-serif;
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; removed to avoid conflict with UIkit */
     }
 
     /* --------  Color Palette  -------- */
@@ -59,6 +59,11 @@
       color: #222;
       font-weight: 600;
       transition: var(--transition);
+    }
+
+    /* Compact Navbar Links */
+    .uk-navbar-nav > li > a {
+      font-size: 0.85rem;
     }
 
     .uk-navbar-item:hover,
@@ -336,44 +341,23 @@
 
 <body>
 
-<script>
-// Scroll ein bisschen weiter nach unten für besseres Navbar-Tracking
-document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = document.querySelectorAll('.uk-navbar-nav a[href^="#"]');
-  
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      
-      if (targetSection) {
-        const offset = 100;
-        const targetPosition = targetSection.offsetTop - offset;
-        
-        // UIkit's scroll mit duration parameter
-        UIkit.scroll(this, {duration: 600, offset: offset}).scrollTo(targetSection);
-      }
-    });
-  });
-});
-</script>
-
-<header uk-sticky>
+<header uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; offset: 0">
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
       <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="/">Laxman Kanagaratnam</a>
       </div>
       <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav uk-visible@m" uk-scrollspy-nav="closest: li; scroll: true; offset: 150">
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#teaching">Teaching</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#cv">CV</a></li>
+        <ul class="uk-navbar-nav uk-visible@m" uk-scrollspy-nav="closest: li; scroll: false; offset: 100">
+          <li><a href="#about" uk-scroll="offset: 0">About</a></li>
+          <li><a href="#education" uk-scroll="offset: 0">Education</a></li>
+          <li><a href="#research" uk-scroll="offset: 0">Research</a></li>
+          <li><a href="#teaching" uk-scroll="offset: 0">Teaching</a></li>
+          <li><a href="#experience" uk-scroll="offset: 0">Volunteering</a></li>
+          <li><a href="#skills" uk-scroll="offset: 0">Skills</a></li>
+          <li><a href="#extracurriculars" uk-scroll="offset: 0">Extracurriculars</a></li>
+          <li><a href="#publications" uk-scroll="offset: 0">Publications</a></li>
+          <li><a href="#cv" uk-scroll="offset: 0">CV</a></li>
         </ul>
         <a class="uk-navbar-toggle uk-hidden@m" uk-toggle="target: #offcanvas" uk-navbar-toggle-icon></a>
       </div>
@@ -386,13 +370,15 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="uk-offcanvas-bar uk-flex uk-flex-column">
     <button class="uk-offcanvas-close" type="button" uk-close></button>
     <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
-      <li><a href="#about" uk-scroll>About</a></li>
-      <li><a href="#education" uk-scroll>Education</a></li>
-      <li><a href="#experience" uk-scroll>Experience</a></li>
-      <li><a href="#research" uk-scroll>Research</a></li>
-      <li><a href="#teaching" uk-scroll>Teaching</a></li>
-      <li><a href="#publications" uk-scroll>Publications</a></li>
-      <li><a href="#cv" uk-scroll>CV</a></li>
+      <li><a href="#about" uk-scroll="offset: 0">About</a></li>
+      <li><a href="#education" uk-scroll="offset: 0">Education</a></li>
+      <li><a href="#research" uk-scroll="offset: 0">Research</a></li>
+      <li><a href="#teaching" uk-scroll="offset: 0">Teaching</a></li>
+      <li><a href="#experience" uk-scroll="offset: 0">Volunteering</a></li>
+      <li><a href="#skills" uk-scroll="offset: 0">Skills</a></li>
+      <li><a href="#extracurriculars" uk-scroll="offset: 0">Extracurriculars</a></li>
+      <li><a href="#publications" uk-scroll="offset: 0">Publications</a></li>
+      <li><a href="#cv" uk-scroll="offset: 0">CV</a></li>
     </ul>
   </div>
 </div>
