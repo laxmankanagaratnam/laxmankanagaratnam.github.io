@@ -174,7 +174,7 @@
     .mobile-close { position: absolute; top: 16px; right: 28px; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 8px; }
 
     /* ---- Hero ---- */
-    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 56px; }
+    .hero { min-height: 60vh; display: flex; align-items: center; padding: 80px 0 40px; }
     .hero-content { display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: center; width: 100%; }
     .hero-photo { width: 220px; height: 280px; border-radius: var(--radius); object-fit: cover; box-shadow: var(--shadow); transition: box-shadow var(--transition); }
     .hero-text h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.1; margin-bottom: 16px; }
@@ -189,19 +189,19 @@
     .hero-links a svg { flex-shrink: 0; }
 
     /* ---- Sections ---- */
-    section { padding: 70px 0; }
+    section { padding: 48px 0; }
     .section-title { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 48px; color: var(--text); transition: color 0.5s ease; }
 
     /* ---- Astro Dividers ---- */
     .astro-divider {
-      width: 100%; height: 130px; position: relative; z-index: 2;
+      width: 100%; height: 160px; position: relative; z-index: 2;
       display: flex; align-items: center; justify-content: center;
     }
-    .astro-divider canvas { width: 320px; height: 130px; }
+    .astro-divider canvas { width: 320px; height: 160px; }
 
     @media (max-width: 768px) {
-      .astro-divider { height: 100px; }
-      .astro-divider canvas { width: 240px; height: 100px; }
+      .astro-divider { height: 120px; }
+      .astro-divider canvas { width: 240px; height: 120px; }
     }
 
     /* ---- Research ---- */
@@ -253,7 +253,7 @@
       .hero-tagline { margin: 0 auto 24px; }
       .hero-links { justify-content: center; }
       .research-grid, .bg-grid { grid-template-columns: 1fr; }
-      section { padding: 45px 0; }
+      section { padding: 32px 0; }
       .section-title { font-size: 1.5rem; margin-bottom: 32px; }
       .cv-bar { flex-direction: column; gap: 16px; text-align: center; }
     }
@@ -345,7 +345,7 @@
             GitHub
           </a>
           <a href="https://orcid.org/0009-0006-7566-4137" target="_blank" rel="noopener">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 256 256"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM70.7 53.5a10.5 10.5 0 110 21 10.5 10.5 0 010-21zm-10.4 37h20.8v121H60.3v-121zm48.5 0h20.8v18.5c9.8-13.9 25.4-21.7 43.2-21.7 31.2 0 54.6 22.7 54.6 58.3v65.9h-20.8V149c0-26.3-16-42-38.1-42-23.5 0-39 17.3-39 43.8v67.7h-20.8V90.5z"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.588-1.547 3.588-3.713 0-2.016-1.144-3.731-3.556-3.731H10.83z"/></svg>
             ORCID
           </a>
           <a href="https://www.researchgate.net/profile/Laxman-Kanagaratnam" target="_blank" rel="noopener">
@@ -360,7 +360,7 @@
 
 <!-- Black Hole Divider -->
 <div class="astro-divider fade-in">
-  <canvas id="blackhole" width="640" height="400"></canvas>
+  <canvas id="blackhole" width="640" height="320"></canvas>
 </div>
 
 <!-- Research -->
@@ -383,9 +383,13 @@
         </div>
       </div>
       <div class="research-card fade-in" style="border-style:dashed;">
-        <div class="research-label">Coming soon</div>
-        <h3>More projects in preparation</h3>
-        <p>Additional research directions will be published here as they develop. Stay tuned.</p>
+        <div class="research-label">In preparation</div>
+        <h3>Noise Removal Strategy for SigMA</h3>
+        <p>
+          Upcoming work on developing a noise-removal strategy for the
+          <a href="https://github.com/rottenstea/Distant_SigMA" target="_blank" rel="noopener"><code style="color:var(--accent);background:var(--accent-dim);padding:2px 7px;border-radius:4px;font-size:0.85em;font-family:var(--font-mono);">SigMA</code></a>
+          clustering algorithm, improving its robustness against field contamination in dense stellar environments.
+        </p>
       </div>
     </div>
   </div>
@@ -393,7 +397,7 @@
 
 <!-- Planetary System Divider -->
 <div class="astro-divider fade-in">
-  <canvas id="planets" width="640" height="400"></canvas>
+  <canvas id="planets" width="640" height="320"></canvas>
 </div>
 
 <!-- Publications -->
@@ -402,14 +406,14 @@
     <h2 class="section-title fade-in">Publications</h2>
     <div class="pub-card fade-in">
       <h4>Bachelor Thesis (in preparation)</h4>
-      <p>Aiming to publish my BSc thesis &middot; Expected 2026&ndash;2027</p>
+      <p>Aiming to publish my BSc thesis.</p>
     </div>
   </div>
 </section>
 
 <!-- Supernova Divider -->
 <div class="astro-divider fade-in">
-  <canvas id="supernova" width="640" height="400"></canvas>
+  <canvas id="supernova" width="640" height="320"></canvas>
 </div>
 
 <!-- Background -->
@@ -510,7 +514,7 @@
 
 <footer>
   <div class="container">
-    <p>&copy; 2025 Laxman Kanagaratnam</p>
+    <p>&copy; 2026 Laxman Kanagaratnam</p>
   </div>
 </footer>
 
@@ -704,116 +708,130 @@ drawConstellation();
   const ctx = c.getContext('2d');
   const W = c.width, H = c.height;
   const cx = W/2, cy = H/2;
+  const EH_R = 22; // event horizon radius
 
-  // Stars orbiting the black hole at various speeds and distances
+  // ~70% disk stars (co-planar, flat), ~30% scattered (inclined, like S-stars near Sgr A*)
   const orbitStars = [];
-  for (let i = 0; i < 40; i++) {
-    const dist = 30 + Math.random() * 120;
+  const DISK_TILT = 0.08; // shared disk plane tilt (slight angle for visual depth)
+  for (let i = 0; i < 50; i++) {
+    const dist = 26 + Math.random() * 130;
+    const isDisk = Math.random() < 0.72;
     orbitStars.push({
       angle: Math.random() * Math.PI * 2,
-      dist: dist,
-      speed: (2.5 / Math.pow(dist/30, 1.5)) * (0.7 + Math.random() * 0.6), // Kepler-ish
-      r: Math.random() * 1.8 + 0.5,
-      brightness: 0.5 + Math.random() * 0.5,
-      tilt: 0.3 + Math.random() * 0.25, // ellipse tilt factor
-      phase: Math.random() * 0.3 - 0.15 // slight rotation offset
+      dist,
+      // Faster + Keplerian: inner stars notably faster, more eccentric spread
+      speed: (3.5 / Math.pow(dist / 26, 1.5)) * (0.7 + Math.random() * 0.8),
+      r: Math.random() * 1.8 + 0.4,
+      brightness: 0.55 + Math.random() * 0.45,
+      // Disk stars: very flat (small ry), all sharing same plane ± small perturbation
+      // Scattered stars: more inclined (larger ry), random rotAngle
+      ry: isDisk
+        ? dist * (0.12 + Math.random() * 0.1)           // flat disk
+        : dist * (0.3 + Math.random() * 0.35),           // inclined
+      rotAngle: isDisk
+        ? DISK_TILT + (Math.random() - 0.5) * 0.15      // near-coplanar
+        : Math.random() * Math.PI * 2,                   // random
+      _px: 0, _py: 0, _behind: false, _d: 0
     });
   }
 
-  function draw(time) {
+  function draw() {
     ctx.clearRect(0, 0, W, H);
     const dark = isDark();
-    const t = time * 0.001;
 
-    // Accretion disk glow
-    for (let ring = 3; ring >= 0; ring--) {
-      const r = 18 + ring * 14;
-      const alpha = dark ? (0.06 - ring * 0.012) : (0.04 - ring * 0.008);
-      ctx.beginPath();
-      ctx.ellipse(cx, cy, r * 2.2, r * 0.7, 0.15, 0, Math.PI * 2);
-      ctx.fillStyle = dark ? `rgba(160,130,255,${alpha})` : `rgba(255,180,60,${alpha})`;
-      ctx.fill();
-    }
-
-    // Orbiting stars
+    // Advance angles and cache screen positions
     for (const s of orbitStars) {
       s.angle += s.speed * 0.016;
-      const x = cx + Math.cos(s.angle + s.phase) * s.dist;
-      const y = cy + Math.sin(s.angle + s.phase) * s.dist * s.tilt;
-      const behind = Math.sin(s.angle + s.phase) > 0; // behind the black hole
-
-      // Draw trail
-      const trailLen = 8;
-      for (let ti = 1; ti <= trailLen; ti++) {
-        const ta = s.angle + s.phase - s.speed * 0.016 * ti * 1.5;
-        const tx = cx + Math.cos(ta) * s.dist;
-        const ty = cy + Math.sin(ta) * s.dist * s.tilt;
-        const ta2 = s.brightness * (1 - ti/trailLen) * (behind ? 0.15 : 0.3) * (dark ? 0.5 : 0.3);
-        ctx.beginPath();
-        ctx.arc(tx, ty, s.r * 0.6, 0, Math.PI * 2);
-        ctx.fillStyle = dark ? `rgba(160,180,255,${ta2})` : `rgba(255,160,40,${ta2})`;
-        ctx.fill();
-      }
-
-      const a = s.brightness * (behind ? 0.3 : 0.9) * (dark ? 1 : 0.7);
-      ctx.beginPath();
-      ctx.arc(x, y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = dark ? `rgba(200,210,255,${a})` : `rgba(255,180,60,${a})`;
-      ctx.fill();
+      const cosR = Math.cos(s.rotAngle), sinR = Math.sin(s.rotAngle);
+      const ex = Math.cos(s.angle) * s.dist;
+      const ey = Math.sin(s.angle) * s.ry;
+      s._px = cx + ex * cosR - ey * sinR;
+      s._py = cy + ex * sinR + ey * cosR;
+      // "behind" when the rotated y-component (depth) is positive
+      s._behind = (ex * sinR + ey * cosR) > 0;
+      s._d = Math.sqrt((s._px - cx) ** 2 + (s._py - cy) ** 2);
     }
 
-    // Black hole center
-    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 22);
+    // Accretion disk — dark mode only, Doppler-coloured (blue left / orange-red right)
     if (dark) {
-      grad.addColorStop(0, 'rgba(0,0,0,1)');
-      grad.addColorStop(0.7, 'rgba(0,0,0,0.95)');
-      grad.addColorStop(1, 'rgba(80,60,160,0.15)');
-    } else {
-      // Light mode: golden/warm center
-      grad.addColorStop(0, 'rgba(255,200,50,0.9)');
-      grad.addColorStop(0.5, 'rgba(255,160,30,0.6)');
-      grad.addColorStop(1, 'rgba(255,120,0,0.05)');
-    }
-    ctx.beginPath();
-    ctx.arc(cx, cy, 22, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    // Light mode: sun corona rays
-    if (!dark) {
-      for (let i = 0; i < 12; i++) {
-        const angle = (i / 12) * Math.PI * 2 + t * 0.3;
-        const len = 30 + Math.sin(t * 2 + i) * 10;
-        const grd = ctx.createLinearGradient(
-          cx + Math.cos(angle) * 22, cy + Math.sin(angle) * 22,
-          cx + Math.cos(angle) * len, cy + Math.sin(angle) * len
-        );
-        grd.addColorStop(0, 'rgba(255,200,80,0.25)');
-        grd.addColorStop(1, 'rgba(255,200,80,0)');
+      for (let ring = 4; ring >= 0; ring--) {
+        const rr = EH_R + ring * 9;
+        const a = 0.065 - ring * 0.011;
+        const dg = ctx.createLinearGradient(cx - rr * 2.4, cy, cx + rr * 2.4, cy);
+        dg.addColorStop(0,   `rgba(80,150,255,${a})`);
+        dg.addColorStop(0.5, `rgba(255,230,180,${a * 0.6})`);
+        dg.addColorStop(1,   `rgba(255,100,60,${a})`);
         ctx.beginPath();
-        ctx.moveTo(cx + Math.cos(angle - 0.08) * 22, cy + Math.sin(angle - 0.08) * 22);
-        ctx.lineTo(cx + Math.cos(angle) * len, cy + Math.sin(angle) * len);
-        ctx.lineTo(cx + Math.cos(angle + 0.08) * 22, cy + Math.sin(angle + 0.08) * 22);
-        ctx.fillStyle = grd;
+        ctx.ellipse(cx, cy, rr * 2.4, rr * 0.55, 0.12, 0, Math.PI * 2);
+        ctx.fillStyle = dg;
         ctx.fill();
       }
-      // Outer glow
-      const sunGlow = ctx.createRadialGradient(cx, cy, 18, cx, cy, 70);
-      sunGlow.addColorStop(0, 'rgba(255,200,80,0.1)');
-      sunGlow.addColorStop(1, 'rgba(255,200,80,0)');
-      ctx.beginPath();
-      ctx.arc(cx, cy, 70, 0, Math.PI * 2);
-      ctx.fillStyle = sunGlow;
-      ctx.fill();
-    } else {
-      // Dark mode: event horizon glow
-      const ehGlow = ctx.createRadialGradient(cx, cy, 18, cx, cy, 50);
-      ehGlow.addColorStop(0, 'rgba(100,80,200,0.2)');
-      ehGlow.addColorStop(1, 'rgba(100,80,200,0)');
-      ctx.beginPath();
-      ctx.arc(cx, cy, 50, 0, Math.PI * 2);
-      ctx.fillStyle = ehGlow;
-      ctx.fill();
+    }
+
+    // --- Pass 1: stars BEHIND the black hole ---
+    for (const s of orbitStars) {
+      if (!s._behind) continue;
+      if (dark && s._d < EH_R) continue; // hidden behind event horizon
+
+      const cosR = Math.cos(s.rotAngle), sinR = Math.sin(s.rotAngle);
+      // Trail
+      for (let ti = 1; ti <= 8; ti++) {
+        const ta = s.angle - s.speed * 0.016 * ti * 2;
+        const tex = Math.cos(ta) * s.dist, tey = Math.sin(ta) * s.ry;
+        const ttx = cx + tex * cosR - tey * sinR;
+        const tty = cy + tex * sinR + tey * cosR;
+        const a = s.brightness * (1 - ti / 8) * 0.14;
+        ctx.beginPath(); ctx.arc(ttx, tty, s.r * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200,215,255,${a})`; ctx.fill();
+      }
+      const a = s.brightness * 0.38 * (dark ? 0.9 : 0.75);
+      ctx.beginPath(); ctx.arc(s._px, s._py, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(210,222,255,${a})`; ctx.fill();
+    }
+
+    // --- Event horizon (dark) or invisible gap (light) ---
+    if (dark) {
+      // Black disk
+      const bhg = ctx.createRadialGradient(cx, cy, 0, cx, cy, EH_R + 10);
+      bhg.addColorStop(0,    'rgba(0,0,0,1)');
+      bhg.addColorStop(0.78, 'rgba(0,0,0,1)');
+      bhg.addColorStop(1,    'rgba(0,0,0,0)');
+      ctx.beginPath(); ctx.arc(cx, cy, EH_R + 10, 0, Math.PI * 2);
+      ctx.fillStyle = bhg; ctx.fill();
+
+      // Photon sphere ring
+      ctx.beginPath(); ctx.arc(cx, cy, EH_R + 1.5, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(210,190,255,0.22)'; ctx.lineWidth = 2; ctx.stroke();
+
+      // Outer glow halo
+      const ehg = ctx.createRadialGradient(cx, cy, EH_R, cx, cy, EH_R + 32);
+      ehg.addColorStop(0, 'rgba(100,80,220,0.2)');
+      ehg.addColorStop(1, 'rgba(100,80,220,0)');
+      ctx.beginPath(); ctx.arc(cx, cy, EH_R + 32, 0, Math.PI * 2);
+      ctx.fillStyle = ehg; ctx.fill();
+    }
+    // In light mode: nothing drawn at the center — black hole is invisible
+
+    // --- Pass 2: stars IN FRONT of the black hole ---
+    for (const s of orbitStars) {
+      if (s._behind) continue;
+      const cosR = Math.cos(s.rotAngle), sinR = Math.sin(s.rotAngle);
+      for (let ti = 1; ti <= 8; ti++) {
+        const ta = s.angle - s.speed * 0.016 * ti * 2;
+        const tex = Math.cos(ta) * s.dist, tey = Math.sin(ta) * s.ry;
+        const ttx = cx + tex * cosR - tey * sinR;
+        const tty = cy + tex * sinR + tey * cosR;
+        const a = s.brightness * (1 - ti / 8) * 0.28;
+        ctx.beginPath(); ctx.arc(ttx, tty, s.r * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200,215,255,${a})`; ctx.fill();
+      }
+      const a = s.brightness * 0.95 * (dark ? 0.92 : 0.8);
+      ctx.beginPath(); ctx.arc(s._px, s._py, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(215,225,255,${a})`; ctx.fill();
+      if (s.r > 1.3 && a > 0.5) {
+        ctx.beginPath(); ctx.arc(s._px, s._py, s.r * 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180,200,255,${a * 0.07})`; ctx.fill();
+      }
     }
 
     requestAnimationFrame(draw);
@@ -935,122 +953,163 @@ drawConstellation();
   requestAnimationFrame(draw);
 })();
 
-// ======================== Supernova / Nebula ========================
+// ======================== Supernova (Scroll-Driven) ========================
 (function() {
   const c = document.getElementById('supernova');
   const ctx = c.getContext('2d');
   const W = c.width, H = c.height;
   const cx = W/2, cy = H/2;
 
+  // Precomputed nebula particles — position is derived from scrollP, not time
+  const PARTICLE_COUNT = 130;
   const particles = [];
-  const PARTICLE_COUNT = 100;
-
-  function initParticles() {
-    particles.length = 0;
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = 0.15 + Math.random() * 0.6;
-      const maxDist = 40 + Math.random() * 100;
-      particles.push({
-        angle,
-        speed,
-        dist: Math.random() * maxDist,
-        maxDist,
-        r: Math.random() * 2 + 0.5,
-        hue: Math.random(), // 0=blue, 0.5=purple, 1=red
-        brightness: 0.4 + Math.random() * 0.6,
-        wobble: Math.random() * 0.02
-      });
-    }
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    // Spread angles more toward equatorial plane like a real supernova remnant
+    const baseAngle = (i / PARTICLE_COUNT) * Math.PI * 2;
+    const spread = (Math.random() - 0.5) * 0.6;
+    particles.push({
+      angle: baseAngle + spread,
+      maxDist: 55 + Math.random() * 115,
+      r: Math.random() * 2.5 + 0.5,
+      // Nebula emission line colours: H-alpha (red), OIII (blue-green), SII (orange-red)
+      // Distribute them roughly evenly with randomness
+      hue: Math.floor(Math.random() * 3), // 0=halpha, 1=oiii, 2=sii
+      brightness: 0.5 + Math.random() * 0.5,
+      wobble: (Math.random() - 0.5) * 0.18,
+    });
   }
-  initParticles();
+
+  let scrollTarget = 0; // raw value from scroll position
+  let scrollP = 0;      // smoothed value used for rendering
+
+  function updateScrollTarget() {
+    const rect = c.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    const centerY = rect.top + rect.height / 2;
+    scrollTarget = Math.max(0, Math.min(1, 1 - centerY / viewH));
+  }
+
+  window.addEventListener('scroll', updateScrollTarget, { passive: true });
+  updateScrollTarget();
 
   function draw(time) {
     ctx.clearRect(0, 0, W, H);
     const dark = isDark();
     const t = time * 0.001;
 
-    // Pulsating core
-    const pulse = 0.8 + 0.2 * Math.sin(t * 2);
+    // Lerp scrollP toward scrollTarget each frame — smooth even when scroll stops mid-way
+    const diff = scrollTarget - scrollP;
+    scrollP += diff * 0.1; // 0.1 = smoothing factor (lower = smoother but slower)
+    if (Math.abs(diff) < 0.0001) scrollP = scrollTarget; // snap at near-zero to avoid drift
+    const p = scrollP;
 
-    // Core glow layers
-    for (let layer = 3; layer >= 0; layer--) {
-      const r = (6 + layer * 8) * pulse;
-      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-      if (dark) {
-        const a = 0.12 - layer * 0.025;
-        grad.addColorStop(0, `rgba(180,140,255,${a})`);
-        grad.addColorStop(0.5, `rgba(120,80,200,${a * 0.5})`);
-        grad.addColorStop(1, 'rgba(100,60,180,0)');
-      } else {
-        const a = 0.12 - layer * 0.025;
-        grad.addColorStop(0, `rgba(255,120,50,${a})`);
-        grad.addColorStop(0.5, `rgba(255,80,30,${a * 0.5})`);
-        grad.addColorStop(1, 'rgba(255,60,20,0)');
-      }
-      ctx.beginPath();
-      ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
-      ctx.fill();
-    }
+    // ---- Phase definitions ----
+    // p 0.00 → 0.42 : pre-supernova — star slowly puffs up and heats (yellow→blue-white)
+    // p 0.42 → 0.54 : flash / shockwave
+    // p 0.54 → 1.00 : nebula expands, neutron star remnant pulses in center
 
-    // Bright core
-    ctx.beginPath();
-    ctx.arc(cx, cy, 3 * pulse, 0, Math.PI * 2);
-    ctx.fillStyle = dark ? `rgba(220,200,255,${0.8 * pulse})` : `rgba(255,220,180,${0.8 * pulse})`;
-    ctx.fill();
+    const preEnd = 0.22, flashPeak = 0.30, flashEnd = 0.40, postStart = 0.40;
 
-    // Expanding particles (nebula remnant)
-    for (const p of particles) {
-      p.dist += p.speed * 0.3;
-      if (p.dist > p.maxDist) p.dist = 0;
+    // ---- Nebula particles (post-explosion) ----
+    if (p > flashPeak) {
+      const explodeP = Math.min(1, (p - flashPeak) / (1 - flashPeak));
 
-      const wobbleX = Math.sin(t * 3 + p.angle * 5) * p.wobble * p.dist;
-      const wobbleY = Math.cos(t * 2 + p.angle * 3) * p.wobble * p.dist;
-      const x = cx + Math.cos(p.angle) * p.dist + wobbleX * 30;
-      const y = cy + Math.sin(p.angle) * p.dist + wobbleY * 30;
+      for (const part of particles) {
+        const dist = part.maxDist * explodeP;
+        const angle = part.angle + part.wobble * explodeP;
+        const x = cx + Math.cos(angle) * dist;
+        const y = cy + Math.sin(angle) * dist * 0.85; // slight vertical compression
 
-      const lifeFrac = p.dist / p.maxDist;
-      const alpha = p.brightness * (1 - lifeFrac * lifeFrac) * (dark ? 0.7 : 0.5);
+        let r, g, b;
+        if (dark) {
+          if (part.hue === 0) { r=255; g=70;  b=70;  } // H-alpha red
+          if (part.hue === 1) { r=60;  g=210; b=255; } // OIII blue-green
+          if (part.hue === 2) { r=255; g=130; b=50;  } // SII orange
+        } else {
+          if (part.hue === 0) { r=210; g=50;  b=50;  }
+          if (part.hue === 1) { r=30;  g=160; b=210; }
+          if (part.hue === 2) { r=210; g=110; b=30;  }
+        }
 
-      let r, g, b;
-      if (dark) {
-        // Blue -> purple -> red-ish nebula
-        r = Math.floor(100 + p.hue * 155);
-        g = Math.floor(60 + (1 - Math.abs(p.hue - 0.5) * 2) * 100);
-        b = Math.floor(255 - p.hue * 100);
-      } else {
-        // Warm: yellow -> orange -> pink
-        r = Math.floor(255);
-        g = Math.floor(180 - p.hue * 120);
-        b = Math.floor(50 + p.hue * 80);
-      }
+        const fade = 1 - explodeP * 0.25;
+        const alpha = part.brightness * fade * (dark ? 0.75 : 0.6);
 
-      ctx.beginPath();
-      ctx.arc(x, y, p.r * (1 + lifeFrac * 0.5), 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
-      ctx.fill();
-
-      // Glow for larger particles
-      if (p.r > 1.5 && alpha > 0.2) {
         ctx.beginPath();
-        ctx.arc(x, y, p.r * 4, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${r},${g},${b},${alpha * 0.1})`;
+        ctx.arc(x, y, part.r * (1 + explodeP * 0.6), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
         ctx.fill();
+        if (part.r > 1.5) {
+          ctx.beginPath();
+          ctx.arc(x, y, part.r * 5, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${r},${g},${b},${alpha * 0.07})`;
+          ctx.fill();
+        }
+      }
+
+      // Expanding shockwave ring
+      const shockR = explodeP * 170;
+      const shockA = Math.max(0, (1 - explodeP * 1.4)) * (dark ? 0.55 : 0.38);
+      if (shockA > 0.01) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, shockR, 0, Math.PI * 2);
+        ctx.strokeStyle = dark ? `rgba(210,190,255,${shockA})` : `rgba(255,170,90,${shockA})`;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
       }
     }
 
-    // Shockwave ring
-    const ringPhase = (t * 0.5) % 3;
-    if (ringPhase < 2) {
-      const ringR = ringPhase * 70;
-      const ringA = (1 - ringPhase / 2) * (dark ? 0.15 : 0.1);
-      ctx.beginPath();
-      ctx.arc(cx, cy, ringR, 0, Math.PI * 2);
-      ctx.strokeStyle = dark ? `rgba(160,140,255,${ringA})` : `rgba(255,150,80,${ringA})`;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
+    // ---- Flash ring around explosion moment ----
+    if (p > preEnd && p < postStart) {
+      const fp = 1 - Math.abs(p - flashPeak) / (flashPeak - preEnd);
+      const flashR = Math.max(0, fp) * 100;
+      const flashA = Math.max(0, fp) * (dark ? 0.45 : 0.3);
+      const fg = ctx.createRadialGradient(cx, cy, 0, cx, cy, flashR);
+      fg.addColorStop(0, `rgba(255,255,255,${flashA})`);
+      fg.addColorStop(0.5, `rgba(255,240,200,${flashA * 0.4})`);
+      fg.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.beginPath(); ctx.arc(cx, cy, flashR, 0, Math.PI * 2);
+      ctx.fillStyle = fg; ctx.fill();
     }
+
+    // ---- Star / remnant ----
+    let starR, starAlpha, sr, sg, sb;
+
+    if (p < preEnd) {
+      // Pre-explosion: pulsing star growing and heating
+      const heat = p / preEnd; // 0→1
+      const pulse = 1 + 0.09 * Math.sin(t * (3 + heat * 4));
+      starR = (4 + heat * heat * 55) * pulse;
+      starAlpha = 0.88;
+      // Colour: orange-yellow → yellow-white → blue-white (temperature sequence)
+      sr = 255;
+      sg = Math.floor(200 + heat * 55);
+      sb = Math.floor(120 + heat * 135);
+    } else if (p < postStart) {
+      // Flash peak: white-hot maximum
+      const fp = (p - preEnd) / (postStart - preEnd);
+      starR = 27 + fp * 50;
+      starAlpha = 1 - fp * 0.6;
+      sr = sg = sb = 255;
+    } else {
+      // Remnant neutron star — tiny, bluish, rapidly pulsing (pulsar-like)
+      const pulseRate = 8 + (p - postStart) * 4;
+      starR = 2.5 + Math.sin(t * pulseRate) * 1;
+      starAlpha = 0.55 + 0.4 * Math.abs(Math.sin(t * pulseRate));
+      sr = 160; sg = 210; sb = 255;
+    }
+
+    // Star glow
+    const glowR = starR * 4;
+    const gg = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
+    gg.addColorStop(0, `rgba(${sr},${sg},${sb},${starAlpha * 0.25})`);
+    gg.addColorStop(1, `rgba(${sr},${sg},${sb},0)`);
+    ctx.beginPath(); ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
+    ctx.fillStyle = gg; ctx.fill();
+
+    // Star body
+    ctx.beginPath(); ctx.arc(cx, cy, starR, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${sr},${sg},${sb},${starAlpha})`;
+    ctx.fill();
 
     requestAnimationFrame(draw);
   }
