@@ -3,1126 +3,608 @@
 <head>
   <meta charset="utf-8">
   <meta name="google-site-verification" content="ED8T8fXIkeAnCf_O30Sc8ZE0vodMEgtw0tzs3NkbesI">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Laxman Kanagaratnam — Physics & Astronomy at the University of Vienna. Research in star formation and galactic structure.">
-  <title>Laxman Kanagaratnam</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0d14">
+  <meta property="og:title" content="Laxman Kanagaratnam">
+  <meta property="og:description" content="Physics & Astronomy at the University of Vienna. Research in star formation and galactic structure.">
+  <meta property="og:image" content="https://laxmankanagaratnam.github.io/assets/images/me.jpg">
+  <meta property="og:url" content="https://laxmankanagaratnam.github.io">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23d9bd8a' d='M32 2 38 26 62 32 38 38 32 62 26 38 2 32 26 26Z'/%3E%3C/svg%3E">
+  <title>Laxman Kanagaratnam · Astronomy, University of Vienna</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Laxman Kanagaratnam",
+    "url": "https://laxmankanagaratnam.github.io",
+    "image": "https://laxmankanagaratnam.github.io/assets/images/me.jpg",
+    "jobTitle": "MSc student in Astronomy",
+    "email": "mailto:laxman.kanagaratnam@univie.ac.at",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Department of Astrophysics, University of Vienna"
+    },
+    "sameAs": [
+      "https://github.com/laxmankanagaratnam",
+      "https://orcid.org/0009-0006-7566-4137",
+      "https://www.researchgate.net/profile/Laxman-Kanagaratnam"
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --font: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --radius: 14px;
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --max-w: 1120px;
+      --serif: Georgia, 'Times New Roman', serif;
+      --max-w: 42rem;
     }
 
     [data-theme="dark"] {
-      --bg: #06060b;
-      --bg-card: rgba(255,255,255,0.035);
-      --bg-card-hover: rgba(255,255,255,0.065);
-      --bg-nav: rgba(6,6,11,0.82);
-      --text: #e8e8ed;
-      --text-secondary: #8b8b9e;
-      --accent: #7ba4ff;
-      --accent-dim: rgba(123,164,255,0.1);
-      --accent-glow: rgba(123,164,255,0.25);
-      --border: rgba(255,255,255,0.07);
-      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+      --bg: #0a0d14;
+      --text: #d6d9e0;
+      --text-dim: #8a8f9e;
+      --heading: #eceef2;
+      --accent: #d9bd8a;
+      --rule: rgba(217, 189, 138, 0.25);
+      --border: rgba(255, 255, 255, 0.1);
+      --star-opacity: 1;
     }
 
     [data-theme="light"] {
-      --bg: #f5f5f7;
-      --bg-card: rgba(0,0,0,0.03);
-      --bg-card-hover: rgba(0,0,0,0.06);
-      --bg-nav: rgba(245,245,247,0.82);
-      --text: #1d1d1f;
-      --text-secondary: #6e6e73;
-      --accent: #2d5fc4;
-      --accent-dim: rgba(45,95,196,0.08);
-      --accent-glow: rgba(45,95,196,0.15);
-      --border: rgba(0,0,0,0.08);
-      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --bg: #faf8f3;
+      --text: #33383f;
+      --text-dim: #767c87;
+      --heading: #1d2129;
+      --accent: #8a6420;
+      --rule: rgba(138, 100, 32, 0.3);
+      --border: rgba(0, 0, 0, 0.12);
+      --star-opacity: 0;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font);
+      font-family: var(--serif);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 1.0625rem;
       -webkit-font-smoothing: antialiased;
-      transition: background 0.8s ease, color 0.5s ease;
-      overflow-x: hidden;
+      transition: background 0.6s ease, color 0.4s ease;
     }
 
-    a { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
-    a:hover { opacity: 0.8; }
-    code { font-family: var(--font-mono); }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+    ::selection { background: var(--accent); color: var(--bg); }
 
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 40px;
-      position: relative;
-      z-index: 2;
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    .skip {
+      position: absolute;
+      left: -9999px;
+      z-index: 10;
+    }
+    .skip:focus {
+      left: 1rem; top: 1rem;
+      position: fixed;
+      background: var(--bg);
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
     }
 
-    #starfield, #constellation {
+    #starfield {
       position: fixed;
       inset: 0;
+      z-index: 0;
       pointer-events: none;
+      opacity: var(--star-opacity);
+      transition: opacity 0.8s ease;
     }
-    #starfield { z-index: 0; }
-    #constellation { z-index: 1; }
 
-    /* ---- Theme Toggle ---- */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ---- Header ---- */
+    header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.75rem 0;
+      font-size: 0.9rem;
+    }
+    header nav { display: flex; gap: 1.4rem; align-items: baseline; }
+    header nav a { color: var(--text-dim); }
+    header nav a:hover { color: var(--accent); }
+    .brand { color: var(--heading); }
+
     .theme-toggle {
-      width: 52px; height: 28px;
+      background: none;
+      border: 1px solid var(--border);
       border-radius: 999px;
-      border: 1.5px solid var(--border);
-      background: var(--bg-card);
+      color: var(--text-dim);
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      width: 2rem; height: 2rem;
       cursor: pointer;
-      display: flex; align-items: center;
-      padding: 0 4px;
-      transition: all var(--transition);
-      flex-shrink: 0;
+      line-height: 1;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      align-self: center;
     }
-    .theme-toggle:hover { border-color: var(--accent); }
-
-    .toggle-thumb {
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: var(--accent);
-      transition: transform 0.4s cubic-bezier(0.68, -0.4, 0.27, 1.3);
-      display: flex; align-items: center; justify-content: center;
-    }
-    [data-theme="dark"] .toggle-thumb { transform: translateX(0); }
-    [data-theme="light"] .toggle-thumb { transform: translateX(22px); }
-    .toggle-thumb svg { width: 12px; height: 12px; fill: #fff; }
-
-    .theme-flash {
-      position: fixed; inset: 0; z-index: 9999;
-      pointer-events: none; opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-    .theme-flash.active { opacity: 1; }
-    [data-theme="dark"] .theme-flash { background: radial-gradient(circle at 50% 30%, rgba(123,164,255,0.12), transparent 70%); }
-    [data-theme="light"] .theme-flash { background: radial-gradient(circle at 50% 30%, rgba(255,200,50,0.18), transparent 70%); }
-
-    /* ---- Navbar ---- */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      backdrop-filter: blur(24px) saturate(1.4);
-      -webkit-backdrop-filter: blur(24px) saturate(1.4);
-      background: var(--bg-nav);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.8s ease, border-color 0.5s ease;
-    }
-    .nav-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 40px;
-      display: flex; align-items: center; justify-content: space-between; height: 56px;
-    }
-    .nav-logo {
-      font-weight: 600; font-size: 0.95rem; color: var(--text);
-      text-decoration: none; letter-spacing: -0.01em; transition: color 0.5s ease;
-    }
-    .nav-right { display: flex; align-items: center; gap: 4px; }
-    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
-    .nav-links a {
-      color: var(--text-secondary); font-size: 0.82rem; font-weight: 500;
-      padding: 7px 14px; border-radius: 8px; transition: all var(--transition); text-decoration: none;
-    }
-    .nav-links a:hover { color: var(--text); background: var(--bg-card-hover); opacity: 1; }
-
-    .dropdown { position: relative; }
-    .dropdown-toggle { cursor: pointer; display: flex; align-items: center; gap: 4px; }
-    .dropdown-toggle::after {
-      content: ''; border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
-      border-top: 3.5px solid var(--text-secondary); transition: transform var(--transition);
-    }
-    .dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }
-    .dropdown-menu {
-      position: absolute; top: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%) translateY(4px);
-      background: var(--bg-nav);
-      backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4);
-      border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 6px; min-width: 180px; opacity: 0; visibility: hidden;
-      transition: all var(--transition); box-shadow: var(--shadow);
-    }
-    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-    .dropdown-menu a { display: block; padding: 8px 14px; border-radius: 8px; color: var(--text-secondary); font-size: 0.82rem; font-weight: 500; }
-    .dropdown-menu a:hover { background: var(--bg-card-hover); color: var(--text); opacity: 1; }
-
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--text); }
-    .hamburger svg { display: block; }
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 99;
-      background: var(--bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-      flex-direction: column; align-items: center; justify-content: center; gap: 6px;
-      transition: background 0.8s ease;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: var(--text-secondary); font-size: 1.1rem; font-weight: 500; padding: 12px 28px; border-radius: 12px; transition: all var(--transition); }
-    .mobile-menu a:hover { color: var(--text); background: var(--bg-card-hover); opacity: 1; }
-    .mobile-close { position: absolute; top: 16px; right: 28px; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 8px; }
+    .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
     /* ---- Hero ---- */
-    .hero { min-height: 60vh; display: flex; align-items: center; padding: 80px 0 40px; }
-    .hero-content { display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: center; width: 100%; }
-    .hero-photo { width: 220px; height: 280px; border-radius: var(--radius); object-fit: cover; box-shadow: var(--shadow); transition: box-shadow var(--transition); }
-    .hero-text h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.1; margin-bottom: 16px; }
-    .hero-tagline { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; max-width: 580px; margin-bottom: 28px; transition: color 0.5s ease; }
-    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-    .hero-links a {
-      display: inline-flex; align-items: center; gap: 7px; color: var(--text-secondary);
-      font-size: 0.85rem; font-weight: 500; padding: 8px 18px; border-radius: 999px;
-      border: 1px solid var(--border); transition: all var(--transition);
+    .hero { padding: 4rem 0 3.5rem; }
+    .hero img {
+      width: 108px; height: 138px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      float: right;
+      margin: 0.4rem 0 1rem 1.75rem;
     }
-    .hero-links a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); opacity: 1; }
-    .hero-links a svg { flex-shrink: 0; }
+    .hero h1 {
+      font-size: clamp(2rem, 5.5vw, 2.75rem);
+      font-weight: normal;
+      color: var(--heading);
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero .role {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+    }
+    .hero p { max-width: 34rem; margin-bottom: 1.5rem; }
+    .hero-links { font-size: 0.95rem; color: var(--text-dim); }
+    .hero-links span { margin: 0 0.5rem; color: var(--text-dim); opacity: 0.5; }
+
+    /* ---- Vela constellation divider ---- */
+    .vela {
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0 1.5rem;
+    }
+    .vela svg { overflow: visible; }
+    .vela path { fill: none; stroke: var(--rule); stroke-width: 1; }
+    .vela circle { fill: var(--accent); }
 
     /* ---- Sections ---- */
-    section { padding: 48px 0; }
-    .section-title { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 48px; color: var(--text); transition: color 0.5s ease; }
-
-    /* ---- Astro Dividers ---- */
-    .astro-divider {
-      width: 100%; height: 160px; position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: center;
+    section { padding: 2.25rem 0; }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
     }
-    .astro-divider canvas { width: 320px; height: 160px; }
-
-    @media (max-width: 768px) {
-      .astro-divider { height: 120px; }
-      .astro-divider canvas { width: 240px; height: 120px; }
-    }
-
-    /* ---- Research ---- */
-    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .research-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all var(--transition); }
-    .research-card:hover { background: var(--bg-card-hover); border-color: var(--accent-glow); box-shadow: 0 0 40px var(--accent-dim); }
-    .research-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: var(--text); }
-    .research-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 12px; }
-    .research-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75; }
-    .research-meta { margin-top: 18px; font-size: 0.8rem; color: var(--text-secondary); }
-
-    /* ---- Background Grid ---- */
-    .bg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .bg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all var(--transition); }
-    .bg-card:hover { background: var(--bg-card-hover); }
-    .bg-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 20px; color: var(--text); padding-bottom: 14px; border-bottom: 1px solid var(--border); transition: color 0.5s ease, border-color 0.5s ease; }
-    .bg-item { margin-bottom: 18px; }
-    .bg-item:last-child { margin-bottom: 0; }
-    .bg-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 2px; transition: color 0.5s ease; }
-    .bg-item .meta { font-size: 0.76rem; color: var(--text-secondary); margin-bottom: 4px; font-family: var(--font-mono); letter-spacing: 0.01em; }
-    .bg-item p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
-    .tag { display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; padding: 4px 11px; border-radius: 999px; background: var(--accent-dim); color: var(--accent); margin: 3px 2px; transition: all var(--transition); }
-
-    /* ---- Publications ---- */
-    .pub-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all var(--transition); }
-    .pub-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .pub-card p { color: var(--text-secondary); font-size: 0.88rem; }
-
-    /* ---- CV Bar ---- */
-    .cv-bar { display: flex; align-items: center; justify-content: space-between; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 28px; margin-top: 48px; transition: all var(--transition); }
-    .cv-bar span { font-size: 0.9rem; color: var(--text-secondary); }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; font-family: var(--font); font-size: 0.85rem; font-weight: 600; border-radius: 999px; background: var(--accent); color: #fff; border: none; cursor: pointer; transition: all var(--transition); text-decoration: none; }
-    .btn:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow); color: #fff; }
-
-    /* ---- Footer ---- */
-    footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; position: relative; z-index: 2; transition: border-color 0.5s ease; }
-    footer p { font-size: 0.78rem; color: var(--text-secondary); }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .nav-inner { padding: 0 20px; }
-      .nav-links, .nav-sep { display: none; }
-      .hamburger { display: block; }
-      .hero { min-height: auto; padding: 120px 0 60px; }
-      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 28px; }
-      .hero-photo { margin: 0 auto; width: 150px; height: 190px; }
-      .hero-text h1 { font-size: 2rem; }
-      .hero-tagline { margin: 0 auto 24px; }
-      .hero-links { justify-content: center; }
-      .research-grid, .bg-grid { grid-template-columns: 1fr; }
-      section { padding: 32px 0; }
-      .section-title { font-size: 1.5rem; margin-bottom: 32px; }
-      .cv-bar { flex-direction: column; gap: 16px; text-align: center; }
-    }
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .container { padding: 0 32px; }
-      .nav-inner { padding: 0 32px; }
+    section h2::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      margin-top: 0.6rem;
     }
 
-    /* ---- Fade in ---- */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .entry { padding: 1.15rem 0; }
+    .entry + .entry { border-top: 1px solid var(--border); }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .entry-head h3 {
+      font-size: 1.05rem;
+      font-weight: normal;
+      color: var(--heading);
+    }
+    .entry-date {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+
+      white-space: nowrap;
+    }
+    .entry-sub { font-size: 0.9rem; color: var(--text-dim); }
+    .entry p:not(.entry-sub) { font-size: 0.95rem; margin-top: 0.4rem; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ---- News ---- */
+    .news-item { display: flex; gap: 1.5rem; padding: 0.5rem 0; font-size: 0.95rem; }
+    .news-date { color: var(--text-dim); flex: 0 0 3rem; }
+
+    /* ---- Contact ---- */
+    .contact-address { margin-top: 0.9rem; font-size: 0.9rem; color: var(--text-dim); }
+
+    /* ---- Scroll reveal — pure CSS, degrades gracefully ---- */
+    @supports (animation-timeline: view()) {
+      main section:not(.hero), .vela {
+        animation: rise both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        main section:not(.hero), .vela { animation: none; }
+      }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* ---- CV link ---- */
+    .cv-note {
+      margin-top: 3rem;
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+
+      font-size: 0.95rem;
+      color: var(--text-dim);
+    }
+
+    footer {
+      padding-top: 3rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    footer .glyph { color: var(--accent); font-style: normal; }
+
+    /* ---- Mobile layout ---- */
+    @media (max-width: 640px) {
+      body { font-size: 1rem; }
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.4rem 0 1rem;
+      }
+      header nav { gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
+      .hero { padding: 2rem 0 2.5rem; text-align: center; }
+      .hero img {
+        float: none;
+        display: block;
+        width: 112px; height: 144px;
+        margin: 0 auto 1.5rem;
+      }
+      .hero p { margin-left: auto; margin-right: auto; }
+      section { padding: 1.75rem 0; }
+      .entry-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+      .entry-date { white-space: normal; }
+    }
   </style>
 </head>
 
 <body>
 
 <canvas id="starfield"></canvas>
-<canvas id="constellation"></canvas>
-<div class="theme-flash" id="themeFlash"></div>
 
-<!-- Navbar -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="#">Laxman Kanagaratnam</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#background">Background</a>
-          <div class="dropdown-menu">
-            <a href="#education">Education</a>
-            <a href="#teaching">Teaching</a>
-            <a href="#experience">Volunteering</a>
-            <a href="#skills">Skills</a>
-            <a href="#extracurriculars">Extracurriculars</a>
-          </div>
-        </li>
-        <li><a href="assets/docs/laxman.pdf" download>CV</a></li>
-      </ul>
-      <div class="nav-sep" style="width:1px;height:20px;background:var(--border);margin:0 10px;"></div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <div class="toggle-thumb">
-          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><path stroke="#fff" stroke-width="2" fill="none" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        </div>
-      </button>
-      <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-    </div>
+<div class="page">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <a class="brand" href="#">Laxman Kanagaratnam</a>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/docs/Laxman.pdf" download>CV</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <section class="hero" id="about">
+    <img src="assets/images/me-web.jpg" alt="Laxman Kanagaratnam" width="317" height="480">
+    <h1>Laxman Kanagaratnam</h1>
+    <p class="role">MSc student &middot; Department of Astrophysics &middot; University of Vienna</p>
+    <p>
+      I study astronomy and physics at the University of Vienna, currently as an
+      MSc student in astronomy, and work in the
+      <a href="https://joaoalves.org" target="_blank" rel="noopener">Alves Lab</a>
+      on stellar clustering in the Vela region. I am driven by the question of how
+      large-scale structure in the Milky Way forms and evolves.
+    </p>
+    <p class="hero-links">
+      <a href="mailto:laxman.kanagaratnam@univie.ac.at">Email</a><span>&middot;</span>
+      <a href="https://github.com/laxmankanagaratnam" target="_blank" rel="noopener">GitHub</a><span>&middot;</span>
+      <a href="https://orcid.org/0009-0006-7566-4137" target="_blank" rel="noopener">ORCID</a><span>&middot;</span>
+      <a href="https://www.researchgate.net/profile/Laxman-Kanagaratnam" target="_blank" rel="noopener">ResearchGate</a>
+    </p>
+  </section>
+
+  <!-- Vela — drawn from the real positions of its brightest stars -->
+  <div class="vela" aria-hidden="true">
+    <svg viewBox="0 0 240 90" width="210" height="79">
+      <title>Vela, the Sail</title>
+      <path d="M2 42 L55 88 L111 90 L162 88 L238 55 L124 0 L90 18 Z"/>
+      <circle cx="2" cy="42" r="2.6"><title>γ Velorum (Regor)</title></circle>
+      <circle cx="55" cy="88" r="2.3"><title>δ Velorum (Alsephina)</title></circle>
+      <circle cx="90" cy="18" r="2.1"><title>λ Velorum (Suhail)</title></circle>
+      <circle cx="111" cy="90" r="2"><title>κ Velorum (Markeb)</title></circle>
+      <circle cx="238" cy="55" r="1.8"><title>μ Velorum</title></circle>
+      <circle cx="162" cy="88" r="1.5"><title>φ Velorum</title></circle>
+      <circle cx="124" cy="0" r="1.5"><title>ψ Velorum</title></circle>
+    </svg>
   </div>
-</nav>
 
-<!-- Mobile menu -->
-<div id="mobileMenu" class="mobile-menu">
-  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close">&times;</button>
-  <a href="#research" onclick="document.getElementById('mobileMenu').classList.remove('open')">Research</a>
-  <a href="#publications" onclick="document.getElementById('mobileMenu').classList.remove('open')">Publications</a>
-  <a href="#education" onclick="document.getElementById('mobileMenu').classList.remove('open')">Education</a>
-  <a href="#teaching" onclick="document.getElementById('mobileMenu').classList.remove('open')">Teaching</a>
-  <a href="#experience" onclick="document.getElementById('mobileMenu').classList.remove('open')">Volunteering</a>
-  <a href="#skills" onclick="document.getElementById('mobileMenu').classList.remove('open')">Skills</a>
-  <a href="#extracurriculars" onclick="document.getElementById('mobileMenu').classList.remove('open')">Extracurriculars</a>
-  <a href="assets/docs/laxman.pdf" download>Download CV</a>
-</div>
+  <section id="news">
+    <h2>News</h2>
+    <div class="news-item"><span class="news-date">2026</span><span>Started the MSc in Astronomy at the University of Vienna.</span></div>
+    <div class="news-item"><span class="news-date">2026</span><span>Completed the BSc in Astronomy with a thesis on the Vela region.</span></div>
+    <div class="news-item"><span class="news-date">2026</span><span>Teaching assistant for Dynamics and Thermodynamics.</span></div>
+    <div class="news-item"><span class="news-date">2025</span><span>Joined the Alves Lab to work on stellar clustering with Gaia DR3.</span></div>
+  </section>
 
-<main>
-
-<!-- Hero -->
-<section class="hero" id="about">
-  <div class="container">
-    <div class="hero-content">
-      <img src="assets/images/me.JPG" alt="Laxman Kanagaratnam" class="hero-photo">
-      <div class="hero-text">
-        <h1>Laxman<br>Kanagaratnam</h1>
-        <p class="hero-tagline">
-          I study physics and astronomy at the University of Vienna and work in the
-          <a href="https://joaoalves.org" target="_blank" rel="noopener">Alves Lab</a>,
-          where I focus on stellar clustering in the Vela region. I'm driven by the question of how large-scale structure in the Milky Way forms and evolves.
-        </p>
-        <div class="hero-links">
-          <a href="mailto:laxman.kanagaratnam@univie.ac.at">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email
-          </a>
-          <a href="https://github.com/laxmankanagaratnam" target="_blank" rel="noopener">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a href="https://orcid.org/0009-0006-7566-4137" target="_blank" rel="noopener">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.588-1.547 3.588-3.713 0-2.016-1.144-3.731-3.556-3.731H10.83z"/></svg>
-            ORCID
-          </a>
-          <a href="https://www.researchgate.net/profile/Laxman-Kanagaratnam" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/><text x="12" y="16.5" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" font-family="serif">R</text></svg>
-            ResearchGate
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Black Hole Divider -->
-<div class="astro-divider fade-in">
-  <canvas id="blackhole" width="640" height="320"></canvas>
-</div>
-
-<!-- Research -->
-<section id="research">
-  <div class="container">
-    <h2 class="section-title fade-in">Research</h2>
-    <div class="research-grid">
-      <div class="research-card fade-in">
-        <div class="research-label">Bachelor Thesis &middot; 2025 &ndash; present</div>
+  <section id="research">
+    <h2>Research</h2>
+    <div class="entry">
+      <div class="entry-head">
         <h3>Large-Scale Structure in the Vela Region</h3>
-        <p>
-          My thesis investigates the large-scale structure in the Vela region using Gaia DR3 data.
-          I apply the <a href="https://github.com/rottenstea/Distant_SigMA" target="_blank" rel="noopener"><code style="color:var(--accent);background:var(--accent-dim);padding:2px 7px;border-radius:4px;font-size:0.85em;font-family:var(--font-mono);">SigMA</code></a>
-          clustering algorithm, developed by Sebastian Ratzenboeck, to identify and characterise stellar groups.
-          The project is implemented in Python and maintained openly on GitHub.
-        </p>
-        <div class="research-meta">
-          Supervised by Alena Rottensteiner (PhD Student, University of Vienna) &middot;
-          <a href="https://joaoalves.org" target="_blank" rel="noopener">Alves Lab</a>
-        </div>
+        <span class="entry-date">2025 – 2026</span>
       </div>
-      <div class="research-card fade-in" style="border-style:dashed;">
-        <div class="research-label">In preparation</div>
+      <p class="entry-sub">Bachelor thesis &middot; Alves Lab, University of Vienna</p>
+      <p>
+        My thesis investigates the large-scale structure in the Vela region using Gaia DR3
+        data. I applied the SigMA clustering algorithm, developed by Sebastian Ratzenböck,
+        to identify and characterise stellar groups. Supervised by Alena Rottensteiner
+        (PhD student, University of Vienna).
+      </p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
         <h3>Noise Removal Strategy for SigMA</h3>
-        <p>
-          Upcoming work on developing a noise-removal strategy for the
-          <a href="https://github.com/rottenstea/Distant_SigMA" target="_blank" rel="noopener"><code style="color:var(--accent);background:var(--accent-dim);padding:2px 7px;border-radius:4px;font-size:0.85em;font-family:var(--font-mono);">SigMA</code></a>
-          clustering algorithm, improving its robustness against field contamination in dense stellar environments.
-        </p>
+        <span class="entry-date">ongoing</span>
+      </div>
+      <p class="entry-sub">Alves Lab, University of Vienna</p>
+      <p>
+        I am developing a noise-removal strategy for the SigMA clustering algorithm,
+        improving its robustness against field contamination in dense stellar environments.
+      </p>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="entry">
+      <p>
+        Nothing published yet — I hope to work towards a first publication during my
+        master's, building on my bachelor thesis.
+      </p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>MSc Astronomy</h3>
+        <span class="entry-date">2026 – 2028</span>
+      </div>
+      <p class="entry-sub">University of Vienna</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>BSc Physics</h3>
+        <span class="entry-date">2025 – 2027</span>
+      </div>
+      <p class="entry-sub">University of Vienna &middot; 141/180 ECTS &middot; expected graduation June 2027<br>Thesis advisors: Prof. Christoph Dellago &amp; Alena Rottensteiner</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>BSc Astronomy</h3>
+        <span class="entry-date">2024 – 2026</span>
+      </div>
+      <p class="entry-sub">University of Vienna &middot; completed June 2026<br>Thesis advisor: Alena Rottensteiner</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>MIT OpenCourseWare</h3>
+        <span class="entry-date">2025 – present</span>
+      </div>
+      <p class="entry-sub">Self-study &middot; physics lectures to compensate for schedule conflicts</p>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Dynamics and Thermodynamics</h3>
+        <span class="entry-date">2026</span>
+      </div>
+      <p class="entry-sub">TA, University of Vienna &middot; supervised by Prof. Kislyakova &amp; Prof. van de Ven</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Medical Physics Laboratory</h3>
+        <span class="entry-date">2025</span>
+      </div>
+      <p class="entry-sub">TA, University of Veterinary Medicine Vienna &middot; supervised by Dr. Olga Jovanovic</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Analysis I</h3>
+        <span class="entry-date">2023</span>
+      </div>
+      <p class="entry-sub">TA and Senior Coach, ETH Zürich &middot; supervised by Prof. Figalli &amp; Dr. Caspar</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Volunteering &amp; Projects</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Academic Community Contributions</h3>
+        <span class="entry-date">2024 – present</span>
+      </div>
+      <p class="entry-sub">University of Vienna &middot; semester summaries and exam-preparation notes for BSc Physics &amp; Astronomy students</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>aCentauri Solar Racing</h3>
+        <span class="entry-date">2023</span>
+      </div>
+      <p class="entry-sub">ETH Zürich &middot; Bridgestone World Solar Challenge 2023</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Physics I Formula Compendium</h3>
+        <span class="entry-date">2023</span>
+      </div>
+      <p class="entry-sub">ETH Zürich &middot; co-developed the official LaTeX compendium, supervised by Prof. Wegscheider</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Matura Project Exhibitor</h3>
+        <span class="entry-date">2020</span>
+      </div>
+      <p class="entry-sub">University of Basel &middot; Saturday Morning Physics, supervised by PD Dr. Liebendorfer</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills &amp; Extras</h2>
+    <div class="two-col">
+      <div class="entry">
+        <div class="entry-head"><h3>Programming &amp; Tools</h3></div>
+        <p class="entry-sub">Python (NumPy, matplotlib, pandas, Astropy), Jupyter, LaTeX, GitHub</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><h3 id="extracurriculars">Astronomical Software</h3></div>
+        <p class="entry-sub">TOPCAT, Simbad, Muniwin, VStar, Minima27</p>
       </div>
     </div>
-  </div>
-</section>
+    <div class="entry">
+      <div class="entry-head"><h3>Extracurriculars</h3></div>
+      <p class="entry-sub">Private tutor for mathematics &amp; physics &middot; Chess Club Therwil (former teacher &amp; member)</p>
+    </div>
 
-<!-- Planetary System Divider -->
-<div class="astro-divider fade-in">
-  <canvas id="planets" width="640" height="320"></canvas>
+    <p class="cv-note">
+      Full details in my <a href="assets/docs/Laxman.pdf" download>curriculum vitae</a>.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="entry">
+      <p>
+        The best way to reach me is by email at
+        <a href="mailto:laxman.kanagaratnam@univie.ac.at">laxman.kanagaratnam@univie.ac.at</a>.
+        You can also find me on
+        <a href="https://github.com/laxmankanagaratnam" target="_blank" rel="noopener">GitHub</a>,
+        <a href="https://orcid.org/0009-0006-7566-4137" target="_blank" rel="noopener">ORCID</a> and
+        <a href="https://www.researchgate.net/profile/Laxman-Kanagaratnam" target="_blank" rel="noopener">ResearchGate</a>.
+      </p>
+      <p class="contact-address">
+        Department of Astrophysics, University of Vienna<br>
+        Türkenschanzstraße 17, 1180 Vienna, Austria
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <p><span class="glyph">✦</span>&ensp;&copy; 2026 Laxman Kanagaratnam&ensp;<span class="glyph">✦</span></p>
+    <p>Last updated July 2026</p>
+  </footer>
+
 </div>
-
-<!-- Publications -->
-<section id="publications">
-  <div class="container">
-    <h2 class="section-title fade-in">Publications</h2>
-    <div class="pub-card fade-in">
-      <h4>Bachelor Thesis (in preparation)</h4>
-      <p>Aiming to publish my BSc thesis.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Supernova Divider -->
-<div class="astro-divider fade-in">
-  <canvas id="supernova" width="640" height="320"></canvas>
-</div>
-
-<!-- Background -->
-<section id="background">
-  <div class="container">
-    <h2 class="section-title fade-in">Background</h2>
-    <div class="bg-grid">
-      <div class="bg-card fade-in" id="education">
-        <h3>Education</h3>
-        <div class="bg-item">
-          <h4>BSc Physics</h4>
-          <div class="meta">University of Vienna &middot; 2025 &ndash; present</div>
-          <p>141/180 ECTS &middot; Expected graduation: June 2027</p>
-        </div>
-        <div class="bg-item">
-          <h4>BSc Astronomy</h4>
-          <div class="meta">University of Vienna &middot; 2024 &ndash; present</div>
-          <p>167/180 ECTS &middot; Expected graduation: June 2026</p>
-        </div>
-        <div class="bg-item">
-          <h4>MIT OpenCourseWare</h4>
-          <div class="meta">Self-study &middot; 2025 &ndash; present</div>
-          <p>Physics lectures to compensate for schedule conflicts</p>
-        </div>
-      </div>
-      <div class="bg-card fade-in" id="teaching">
-        <h3>Teaching</h3>
-        <div class="bg-item">
-          <h4>Dynamics and Thermodynamics</h4>
-          <div class="meta">University of Vienna &middot; 2026</div>
-          <p>TA, supervised by Prof. Kislyakova &amp; Prof. van de Ven</p>
-        </div>
-        <div class="bg-item">
-          <h4>Medical Physics Laboratory</h4>
-          <div class="meta">Veterinary University of Vienna &middot; 2025</div>
-          <p>TA, supervised by Dr. Olga Jovanovic</p>
-        </div>
-        <div class="bg-item">
-          <h4>Analysis I</h4>
-          <div class="meta">ETH Zurich &middot; 2023</div>
-          <p>TA and Senior Coach, supervised by Prof. Figalli &amp; Dr. Caspar</p>
-        </div>
-      </div>
-      <div class="bg-card fade-in" id="experience">
-        <h3>Volunteering &amp; Projects</h3>
-        <div class="bg-item">
-          <h4>Academic Community Contributions</h4>
-          <div class="meta">University of Vienna &middot; 2024 &ndash; present</div>
-          <p>Semester summaries and exam-preparation notes for BSc Physics &amp; Astronomy students</p>
-        </div>
-        <div class="bg-item">
-          <h4>aCentauri Solar Racing</h4>
-          <div class="meta">ETH Zurich &middot; 2023</div>
-          <p>Bridgestone World Solar Challenge 2023</p>
-        </div>
-        <div class="bg-item">
-          <h4>Physics I Formula Compendium</h4>
-          <div class="meta">ETH Zurich &middot; 2023</div>
-          <p>Co-developed the official LaTeX compendium, supervised by Prof. Wegscheider</p>
-        </div>
-        <div class="bg-item">
-          <h4>Matura Project Exhibitor</h4>
-          <div class="meta">University of Basel &middot; 2020</div>
-          <p>Saturday Morning Physics, supervised by PD Dr. Liebendorfer</p>
-        </div>
-      </div>
-      <div class="bg-card fade-in" id="skills">
-        <h3>Skills &amp; <span id="extracurriculars">Extras</span></h3>
-        <div class="bg-item">
-          <h4>Programming &amp; Tools</h4>
-          <p style="margin-top:8px;">
-            <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">matplotlib</span><span class="tag">pandas</span><span class="tag">Astropy</span><span class="tag">Jupyter</span><span class="tag">LaTeX</span><span class="tag">GitHub</span>
-          </p>
-        </div>
-        <div class="bg-item">
-          <h4>Astronomical Software</h4>
-          <p style="margin-top:8px;">
-            <span class="tag">TOPCAT</span><span class="tag">Simbad</span><span class="tag">Muniwin</span><span class="tag">VStar</span><span class="tag">Minima27</span>
-          </p>
-        </div>
-        <div class="bg-item">
-          <h4>Extracurriculars</h4>
-          <p>Private tutor (math &amp; physics) &middot; Chess Club Therwil (former teacher &amp; member)</p>
-        </div>
-      </div>
-    </div>
-    <div class="cv-bar fade-in">
-      <span>Full details available in my curriculum vitae.</span>
-      <a href="assets/docs/laxman.pdf" download class="btn">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download CV
-      </a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2026 Laxman Kanagaratnam</p>
-  </div>
-</footer>
 
 <script>
-// ======================== Theme Toggle ========================
+// Theme toggle
 const root = document.documentElement;
 const toggle = document.getElementById('themeToggle');
-const flash = document.getElementById('themeFlash');
-const moonIcon = toggle.querySelector('.icon-moon');
-const sunIcon = toggle.querySelector('.icon-sun');
 
-function setTheme(theme) {
+function applyTheme(theme) {
   root.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  moonIcon.style.display = theme === 'dark' ? 'block' : 'none';
-  sunIcon.style.display = theme === 'light' ? 'block' : 'none';
+  toggle.textContent = theme === 'dark' ? '☾' : '☀';
+  document.querySelector('meta[name="theme-color"]')
+    .setAttribute('content', theme === 'dark' ? '#0a0d14' : '#faf8f3');
 }
-
-setTheme(localStorage.getItem('theme') || 'dark');
-
+applyTheme(localStorage.getItem('theme') ||
+  (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
 toggle.addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  flash.classList.add('active');
-  setTimeout(() => flash.classList.remove('active'), 700);
-  setTheme(next);
+  applyTheme(next);
+  localStorage.setItem('theme', next);
 });
 
-function isDark() { return root.getAttribute('data-theme') === 'dark'; }
-
-// ======================== Starfield ========================
-const starCanvas = document.getElementById('starfield');
-const starCtx = starCanvas.getContext('2d');
+// Quiet starfield — faint, slowly twinkling stars (visible in dark mode only)
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
 let stars = [];
-let shootingStars = [];
 
-function resizeStarfield() {
-  starCanvas.width = window.innerWidth;
-  starCanvas.height = window.innerHeight;
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   stars = [];
-  const count = Math.floor((starCanvas.width * starCanvas.height) / 5000);
+  const count = Math.floor((canvas.width * canvas.height) / 9000);
   for (let i = 0; i < count; i++) {
     stars.push({
-      x: Math.random() * starCanvas.width,
-      y: Math.random() * starCanvas.height,
-      r: Math.random() * 1.5 + 0.3,
-      brightness: 0.3 + Math.random() * 0.7,
-      speed: Math.random() * 0.001 + 0.0003,
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.1 + 0.3,
+      base: 0.15 + Math.random() * 0.45,
+      speed: 0.0002 + Math.random() * 0.0006,
       phase: Math.random() * Math.PI * 2
     });
   }
 }
 
-function drawStars(time) {
-  starCtx.clearRect(0, 0, starCanvas.width, starCanvas.height);
-  const dark = isDark();
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+function drawFrame(time) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (const s of stars) {
-    const twinkle = 0.3 + 0.7 * Math.sin(time * s.speed + s.phase);
-    const alpha = s.brightness * twinkle * (dark ? 1 : 0.12);
-    if (alpha < 0.02) continue;
-    starCtx.beginPath();
-    starCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    starCtx.fillStyle = dark ? `rgba(200,215,255,${alpha})` : `rgba(80,100,160,${alpha})`;
-    starCtx.fill();
-    // Bright stars get a subtle glow
-    if (s.r > 1.2 && alpha > 0.5 && dark) {
-      starCtx.beginPath();
-      starCtx.arc(s.x, s.y, s.r * 3, 0, Math.PI * 2);
-      starCtx.fillStyle = `rgba(180,200,255,${alpha * 0.08})`;
-      starCtx.fill();
-    }
-  }
-
-  // Shooting stars (dark mode only)
-  if (dark && Math.random() < 0.01) {
-    shootingStars.push({
-      x: Math.random() * starCanvas.width * 0.7,
-      y: Math.random() * starCanvas.height * 0.35,
-      len: Math.random() * 100 + 60,
-      speed: Math.random() * 8 + 5,
-      angle: Math.PI / 4 + (Math.random() - 0.5) * 0.4,
-      life: 1
-    });
-  }
-  for (let i = shootingStars.length - 1; i >= 0; i--) {
-    const ss = shootingStars[i];
-    ss.x += Math.cos(ss.angle) * ss.speed;
-    ss.y += Math.sin(ss.angle) * ss.speed;
-    ss.life -= 0.013;
-    if (ss.life <= 0) { shootingStars.splice(i, 1); continue; }
-    const tx = ss.x - Math.cos(ss.angle) * ss.len;
-    const ty = ss.y - Math.sin(ss.angle) * ss.len;
-    const grad = starCtx.createLinearGradient(tx, ty, ss.x, ss.y);
-    grad.addColorStop(0, 'rgba(180,200,255,0)');
-    grad.addColorStop(1, `rgba(210,225,255,${ss.life * 0.7})`);
-    starCtx.beginPath();
-    starCtx.moveTo(tx, ty);
-    starCtx.lineTo(ss.x, ss.y);
-    starCtx.strokeStyle = grad;
-    starCtx.lineWidth = 1.8;
-    starCtx.stroke();
-    starCtx.beginPath();
-    starCtx.arc(ss.x, ss.y, 2.5, 0, Math.PI * 2);
-    starCtx.fillStyle = `rgba(230,240,255,${ss.life * 0.9})`;
-    starCtx.fill();
-  }
-
-  requestAnimationFrame(drawStars);
-}
-
-resizeStarfield();
-window.addEventListener('resize', resizeStarfield);
-requestAnimationFrame(drawStars);
-
-// ======================== Constellation ========================
-const constCanvas = document.getElementById('constellation');
-const constCtx = constCanvas.getContext('2d');
-let constNodes = [];
-
-function resizeConstellation() {
-  constCanvas.width = window.innerWidth;
-  constCanvas.height = window.innerHeight;
-  constNodes = [];
-  const count = Math.floor(constCanvas.width * constCanvas.height * 0.00005);
-  const pageH = document.documentElement.scrollHeight;
-  for (let i = 0; i < count; i++) {
-    constNodes.push({
-      x: Math.random() * constCanvas.width,
-      baseY: Math.random() * pageH,
-      r: Math.random() * 2 + 0.5,
-      parallax: 0.02 + Math.random() * 0.06,
-      connections: []
-    });
-  }
-  for (let i = 0; i < constNodes.length; i++) {
-    for (let j = i + 1; j < constNodes.length; j++) {
-      const dx = constNodes[i].x - constNodes[j].x;
-      const dy = constNodes[i].baseY - constNodes[j].baseY;
-      if (Math.sqrt(dx*dx+dy*dy) < 200 && Math.random() > 0.5) {
-        constNodes[i].connections.push(j);
-      }
-    }
-  }
-}
-
-function drawConstellation() {
-  constCtx.clearRect(0, 0, constCanvas.width, constCanvas.height);
-  const scrollY = window.scrollY;
-  const viewH = window.innerHeight;
-  const dark = isDark();
-  const baseA = dark ? 0.4 : 0.22;
-
-  for (let i = 0; i < constNodes.length; i++) {
-    const n = constNodes[i];
-    const sy = n.baseY - scrollY * (1 - n.parallax);
-    if (sy < -100 || sy > viewH + 100) continue;
-    const prox = Math.max(0, 1 - Math.abs(sy - viewH/2) / (viewH * 0.65));
-    const alpha = prox * baseA;
-    if (alpha < 0.01) continue;
-
-    for (const j of n.connections) {
-      const m = constNodes[j];
-      const my = m.baseY - scrollY * (1 - m.parallax);
-      if (my < -100 || my > viewH + 100) continue;
-      const mp = Math.max(0, 1 - Math.abs(my - viewH/2) / (viewH * 0.65));
-      const la = Math.min(alpha, mp * baseA) * 0.4;
-      if (la < 0.01) continue;
-      constCtx.beginPath();
-      constCtx.moveTo(n.x, sy);
-      constCtx.lineTo(m.x, my);
-      constCtx.strokeStyle = dark ? `rgba(123,164,255,${la})` : `rgba(45,95,196,${la})`;
-      constCtx.lineWidth = 0.7;
-      constCtx.stroke();
-    }
-
-    constCtx.beginPath();
-    constCtx.arc(n.x, sy, n.r, 0, Math.PI * 2);
-    constCtx.fillStyle = dark ? `rgba(123,164,255,${alpha*0.6})` : `rgba(45,95,196,${alpha*0.5})`;
-    constCtx.fill();
-  }
-}
-
-resizeConstellation();
-window.addEventListener('resize', resizeConstellation);
-window.addEventListener('scroll', () => requestAnimationFrame(drawConstellation), { passive: true });
-drawConstellation();
-
-// ======================== Black Hole Animation ========================
-(function() {
-  const c = document.getElementById('blackhole');
-  const ctx = c.getContext('2d');
-  const W = c.width, H = c.height;
-  const cx = W/2, cy = H/2;
-  const EH_R = 22; // event horizon radius
-
-  // ~70% disk stars (co-planar, flat), ~30% scattered (inclined, like S-stars near Sgr A*)
-  const orbitStars = [];
-  const DISK_TILT = 0.08; // shared disk plane tilt (slight angle for visual depth)
-  for (let i = 0; i < 50; i++) {
-    const dist = 26 + Math.random() * 130;
-    const isDisk = Math.random() < 0.72;
-    orbitStars.push({
-      angle: Math.random() * Math.PI * 2,
-      dist,
-      // Faster + Keplerian: inner stars notably faster, more eccentric spread
-      speed: (3.5 / Math.pow(dist / 26, 1.5)) * (0.7 + Math.random() * 0.8),
-      r: Math.random() * 1.8 + 0.4,
-      brightness: 0.55 + Math.random() * 0.45,
-      // Disk stars: very flat (small ry), all sharing same plane ± small perturbation
-      // Scattered stars: more inclined (larger ry), random rotAngle
-      ry: isDisk
-        ? dist * (0.12 + Math.random() * 0.1)           // flat disk
-        : dist * (0.3 + Math.random() * 0.35),           // inclined
-      rotAngle: isDisk
-        ? DISK_TILT + (Math.random() - 0.5) * 0.15      // near-coplanar
-        : Math.random() * Math.PI * 2,                   // random
-      _px: 0, _py: 0, _behind: false, _d: 0
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    const dark = isDark();
-
-    // Advance angles and cache screen positions
-    for (const s of orbitStars) {
-      s.angle += s.speed * 0.016;
-      const cosR = Math.cos(s.rotAngle), sinR = Math.sin(s.rotAngle);
-      const ex = Math.cos(s.angle) * s.dist;
-      const ey = Math.sin(s.angle) * s.ry;
-      s._px = cx + ex * cosR - ey * sinR;
-      s._py = cy + ex * sinR + ey * cosR;
-      // "behind" when the rotated y-component (depth) is positive
-      s._behind = (ex * sinR + ey * cosR) > 0;
-      s._d = Math.sqrt((s._px - cx) ** 2 + (s._py - cy) ** 2);
-    }
-
-    // Accretion disk — dark mode only, Doppler-coloured (blue left / orange-red right)
-    if (dark) {
-      for (let ring = 4; ring >= 0; ring--) {
-        const rr = EH_R + ring * 9;
-        const a = 0.065 - ring * 0.011;
-        const dg = ctx.createLinearGradient(cx - rr * 2.4, cy, cx + rr * 2.4, cy);
-        dg.addColorStop(0,   `rgba(80,150,255,${a})`);
-        dg.addColorStop(0.5, `rgba(255,230,180,${a * 0.6})`);
-        dg.addColorStop(1,   `rgba(255,100,60,${a})`);
-        ctx.beginPath();
-        ctx.ellipse(cx, cy, rr * 2.4, rr * 0.55, 0.12, 0, Math.PI * 2);
-        ctx.fillStyle = dg;
-        ctx.fill();
-      }
-    }
-
-    // --- Pass 1: stars BEHIND the black hole ---
-    for (const s of orbitStars) {
-      if (!s._behind) continue;
-      if (dark && s._d < EH_R) continue; // hidden behind event horizon
-
-      const cosR = Math.cos(s.rotAngle), sinR = Math.sin(s.rotAngle);
-      // Trail
-      for (let ti = 1; ti <= 8; ti++) {
-        const ta = s.angle - s.speed * 0.016 * ti * 2;
-        const tex = Math.cos(ta) * s.dist, tey = Math.sin(ta) * s.ry;
-        const ttx = cx + tex * cosR - tey * sinR;
-        const tty = cy + tex * sinR + tey * cosR;
-        const a = s.brightness * (1 - ti / 8) * 0.14;
-        ctx.beginPath(); ctx.arc(ttx, tty, s.r * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200,215,255,${a})`; ctx.fill();
-      }
-      const a = s.brightness * 0.38 * (dark ? 0.9 : 0.75);
-      ctx.beginPath(); ctx.arc(s._px, s._py, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(210,222,255,${a})`; ctx.fill();
-    }
-
-    // --- Event horizon (dark) or invisible gap (light) ---
-    if (dark) {
-      // Black disk
-      const bhg = ctx.createRadialGradient(cx, cy, 0, cx, cy, EH_R + 10);
-      bhg.addColorStop(0,    'rgba(0,0,0,1)');
-      bhg.addColorStop(0.78, 'rgba(0,0,0,1)');
-      bhg.addColorStop(1,    'rgba(0,0,0,0)');
-      ctx.beginPath(); ctx.arc(cx, cy, EH_R + 10, 0, Math.PI * 2);
-      ctx.fillStyle = bhg; ctx.fill();
-
-      // Photon sphere ring
-      ctx.beginPath(); ctx.arc(cx, cy, EH_R + 1.5, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(210,190,255,0.22)'; ctx.lineWidth = 2; ctx.stroke();
-
-      // Outer glow halo
-      const ehg = ctx.createRadialGradient(cx, cy, EH_R, cx, cy, EH_R + 32);
-      ehg.addColorStop(0, 'rgba(100,80,220,0.2)');
-      ehg.addColorStop(1, 'rgba(100,80,220,0)');
-      ctx.beginPath(); ctx.arc(cx, cy, EH_R + 32, 0, Math.PI * 2);
-      ctx.fillStyle = ehg; ctx.fill();
-    }
-    // In light mode: nothing drawn at the center — black hole is invisible
-
-    // --- Pass 2: stars IN FRONT of the black hole ---
-    for (const s of orbitStars) {
-      if (s._behind) continue;
-      const cosR = Math.cos(s.rotAngle), sinR = Math.sin(s.rotAngle);
-      for (let ti = 1; ti <= 8; ti++) {
-        const ta = s.angle - s.speed * 0.016 * ti * 2;
-        const tex = Math.cos(ta) * s.dist, tey = Math.sin(ta) * s.ry;
-        const ttx = cx + tex * cosR - tey * sinR;
-        const tty = cy + tex * sinR + tey * cosR;
-        const a = s.brightness * (1 - ti / 8) * 0.28;
-        ctx.beginPath(); ctx.arc(ttx, tty, s.r * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200,215,255,${a})`; ctx.fill();
-      }
-      const a = s.brightness * 0.95 * (dark ? 0.92 : 0.8);
-      ctx.beginPath(); ctx.arc(s._px, s._py, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(215,225,255,${a})`; ctx.fill();
-      if (s.r > 1.3 && a > 0.5) {
-        ctx.beginPath(); ctx.arc(s._px, s._py, s.r * 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(180,200,255,${a * 0.07})`; ctx.fill();
-      }
-    }
-
-    requestAnimationFrame(draw);
-  }
-  requestAnimationFrame(draw);
-})();
-
-// ======================== Planetary System ========================
-(function() {
-  const c = document.getElementById('planets');
-  const ctx = c.getContext('2d');
-  const W = c.width, H = c.height;
-  const cx = W/2, cy = H/2;
-
-  const orbits = [
-    { rx: 55, ry: 18, tilt: -0.2, speed: 1.8, size: 3.5, color: [180,200,255], lightColor: [60,120,200], angle: 0 },
-    { rx: 95, ry: 32, tilt: -0.15, speed: 1.0, size: 5, color: [255,200,150], lightColor: [200,120,40], angle: Math.PI * 0.7,
-      moon: { dist: 14, speed: 4, size: 1.8, angle: 0 } },
-    { rx: 140, ry: 46, tilt: -0.1, speed: 0.6, size: 4, color: [150,220,180], lightColor: [40,160,100], angle: Math.PI * 1.4 }
-  ];
-
-  function draw(time) {
-    ctx.clearRect(0, 0, W, H);
-    const dark = isDark();
-    const t = time * 0.001;
-
-    // Star/Sun in center
-    const starGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, dark ? 8 : 12);
-    if (dark) {
-      starGrad.addColorStop(0, 'rgba(255,240,220,0.95)');
-      starGrad.addColorStop(0.5, 'rgba(255,200,140,0.5)');
-      starGrad.addColorStop(1, 'rgba(255,180,100,0)');
-    } else {
-      starGrad.addColorStop(0, 'rgba(255,210,80,0.95)');
-      starGrad.addColorStop(0.5, 'rgba(255,180,50,0.4)');
-      starGrad.addColorStop(1, 'rgba(255,160,30,0)');
-    }
+    const a = reduceMotion
+      ? s.base * 0.8
+      : s.base * (0.55 + 0.45 * Math.sin(time * s.speed + s.phase));
     ctx.beginPath();
-    ctx.arc(cx, cy, dark ? 8 : 12, 0, Math.PI * 2);
-    ctx.fillStyle = starGrad;
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(214, 220, 240, ${a})`;
     ctx.fill();
-
-    // Glow
-    const glow = ctx.createRadialGradient(cx, cy, 3, cx, cy, 25);
-    glow.addColorStop(0, dark ? 'rgba(255,220,160,0.15)' : 'rgba(255,200,60,0.15)');
-    glow.addColorStop(1, 'rgba(255,200,100,0)');
-    ctx.beginPath();
-    ctx.arc(cx, cy, 25, 0, Math.PI * 2);
-    ctx.fillStyle = glow;
-    ctx.fill();
-
-    for (const o of orbits) {
-      // Draw orbit ellipse path
-      ctx.beginPath();
-      ctx.ellipse(cx, cy, o.rx, o.ry, o.tilt, 0, Math.PI * 2);
-      ctx.strokeStyle = dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
-      ctx.lineWidth = 0.8;
-      ctx.stroke();
-
-      // Update planet position on the SAME ellipse
-      o.angle += o.speed * 0.016;
-      const cosT = Math.cos(o.tilt);
-      const sinT = Math.sin(o.tilt);
-      const ex = Math.cos(o.angle) * o.rx;
-      const ey = Math.sin(o.angle) * o.ry;
-      const px = cx + ex * cosT - ey * sinT;
-      const py = cy + ex * sinT + ey * cosT;
-
-      const col = dark ? o.color : o.lightColor;
-
-      // Planet trail
-      for (let ti = 1; ti <= 10; ti++) {
-        const ta = o.angle - o.speed * 0.016 * ti * 2;
-        const tex = Math.cos(ta) * o.rx;
-        const tey = Math.sin(ta) * o.ry;
-        const ttx = cx + tex * cosT - tey * sinT;
-        const tty = cy + tex * sinT + tey * cosT;
-        const a = (1 - ti/10) * 0.25;
-        ctx.beginPath();
-        ctx.arc(ttx, tty, o.size * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${a})`;
-        ctx.fill();
-      }
-
-      // Planet
-      ctx.beginPath();
-      ctx.arc(px, py, o.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},0.9)`;
-      ctx.fill();
-
-      // Planet glow
-      ctx.beginPath();
-      ctx.arc(px, py, o.size * 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},0.08)`;
-      ctx.fill();
-
-      // Moon
-      if (o.moon) {
-        o.moon.angle += o.moon.speed * 0.016;
-        const mx = px + Math.cos(o.moon.angle) * o.moon.dist;
-        const my = py + Math.sin(o.moon.angle) * o.moon.dist * 0.4;
-
-        ctx.beginPath();
-        ctx.arc(mx, my, o.moon.size, 0, Math.PI * 2);
-        ctx.fillStyle = dark ? 'rgba(200,200,220,0.75)' : 'rgba(120,120,140,0.7)';
-        ctx.fill();
-
-        // Moon orbit hint
-        ctx.beginPath();
-        ctx.ellipse(px, py, o.moon.dist, o.moon.dist * 0.4, 0, 0, Math.PI * 2);
-        ctx.strokeStyle = dark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-    }
-
-    requestAnimationFrame(draw);
   }
-  requestAnimationFrame(draw);
-})();
+  if (!reduceMotion) requestAnimationFrame(drawFrame);
+}
 
-// ======================== Supernova (Scroll-Driven) ========================
-(function() {
-  const c = document.getElementById('supernova');
-  const ctx = c.getContext('2d');
-  const W = c.width, H = c.height;
-  const cx = W/2, cy = H/2;
-
-  // Precomputed nebula particles — position is derived from scrollP, not time
-  const PARTICLE_COUNT = 130;
-  const particles = [];
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
-    // Spread angles more toward equatorial plane like a real supernova remnant
-    const baseAngle = (i / PARTICLE_COUNT) * Math.PI * 2;
-    const spread = (Math.random() - 0.5) * 0.6;
-    particles.push({
-      angle: baseAngle + spread,
-      maxDist: 55 + Math.random() * 115,
-      r: Math.random() * 2.5 + 0.5,
-      // Nebula emission line colours: H-alpha (red), OIII (blue-green), SII (orange-red)
-      // Distribute them roughly evenly with randomness
-      hue: Math.floor(Math.random() * 3), // 0=halpha, 1=oiii, 2=sii
-      brightness: 0.5 + Math.random() * 0.5,
-      wobble: (Math.random() - 0.5) * 0.18,
-    });
-  }
-
-  let scrollTarget = 0; // raw value from scroll position
-  let scrollP = 0;      // smoothed value used for rendering
-
-  function updateScrollTarget() {
-    const rect = c.getBoundingClientRect();
-    const viewH = window.innerHeight;
-    const centerY = rect.top + rect.height / 2;
-    scrollTarget = Math.max(0, Math.min(1, 1 - centerY / viewH));
-  }
-
-  window.addEventListener('scroll', updateScrollTarget, { passive: true });
-  updateScrollTarget();
-
-  function draw(time) {
-    ctx.clearRect(0, 0, W, H);
-    const dark = isDark();
-    const t = time * 0.001;
-
-    // Lerp scrollP toward scrollTarget each frame — smooth even when scroll stops mid-way
-    const diff = scrollTarget - scrollP;
-    scrollP += diff * 0.1; // 0.1 = smoothing factor (lower = smoother but slower)
-    if (Math.abs(diff) < 0.0001) scrollP = scrollTarget; // snap at near-zero to avoid drift
-    const p = scrollP;
-
-    // ---- Phase definitions ----
-    // p 0.00 → 0.42 : pre-supernova — star slowly puffs up and heats (yellow→blue-white)
-    // p 0.42 → 0.54 : flash / shockwave
-    // p 0.54 → 1.00 : nebula expands, neutron star remnant pulses in center
-
-    const preEnd = 0.22, flashPeak = 0.30, flashEnd = 0.40, postStart = 0.40;
-
-    // ---- Nebula particles (post-explosion) ----
-    if (p > flashPeak) {
-      const explodeP = Math.min(1, (p - flashPeak) / (1 - flashPeak));
-
-      for (const part of particles) {
-        const dist = part.maxDist * explodeP;
-        const angle = part.angle + part.wobble * explodeP;
-        const x = cx + Math.cos(angle) * dist;
-        const y = cy + Math.sin(angle) * dist * 0.85; // slight vertical compression
-
-        let r, g, b;
-        if (dark) {
-          if (part.hue === 0) { r=255; g=70;  b=70;  } // H-alpha red
-          if (part.hue === 1) { r=60;  g=210; b=255; } // OIII blue-green
-          if (part.hue === 2) { r=255; g=130; b=50;  } // SII orange
-        } else {
-          if (part.hue === 0) { r=210; g=50;  b=50;  }
-          if (part.hue === 1) { r=30;  g=160; b=210; }
-          if (part.hue === 2) { r=210; g=110; b=30;  }
-        }
-
-        const fade = 1 - explodeP * 0.25;
-        const alpha = part.brightness * fade * (dark ? 0.75 : 0.6);
-
-        ctx.beginPath();
-        ctx.arc(x, y, part.r * (1 + explodeP * 0.6), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
-        ctx.fill();
-        if (part.r > 1.5) {
-          ctx.beginPath();
-          ctx.arc(x, y, part.r * 5, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${r},${g},${b},${alpha * 0.07})`;
-          ctx.fill();
-        }
-      }
-
-      // Expanding shockwave ring
-      const shockR = explodeP * 170;
-      const shockA = Math.max(0, (1 - explodeP * 1.4)) * (dark ? 0.55 : 0.38);
-      if (shockA > 0.01) {
-        ctx.beginPath();
-        ctx.arc(cx, cy, shockR, 0, Math.PI * 2);
-        ctx.strokeStyle = dark ? `rgba(210,190,255,${shockA})` : `rgba(255,170,90,${shockA})`;
-        ctx.lineWidth = 2.5;
-        ctx.stroke();
-      }
-    }
-
-    // ---- Flash ring around explosion moment ----
-    if (p > preEnd && p < postStart) {
-      const fp = 1 - Math.abs(p - flashPeak) / (flashPeak - preEnd);
-      const flashR = Math.max(0, fp) * 100;
-      const flashA = Math.max(0, fp) * (dark ? 0.45 : 0.3);
-      const fg = ctx.createRadialGradient(cx, cy, 0, cx, cy, flashR);
-      fg.addColorStop(0, `rgba(255,255,255,${flashA})`);
-      fg.addColorStop(0.5, `rgba(255,240,200,${flashA * 0.4})`);
-      fg.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.beginPath(); ctx.arc(cx, cy, flashR, 0, Math.PI * 2);
-      ctx.fillStyle = fg; ctx.fill();
-    }
-
-    // ---- Star / remnant ----
-    let starR, starAlpha, sr, sg, sb;
-
-    if (p < preEnd) {
-      // Pre-explosion: pulsing star growing and heating
-      const heat = p / preEnd; // 0→1
-      const pulse = 1 + 0.09 * Math.sin(t * (3 + heat * 4));
-      starR = (4 + heat * heat * 55) * pulse;
-      starAlpha = 0.88;
-      // Colour: orange-yellow → yellow-white → blue-white (temperature sequence)
-      sr = 255;
-      sg = Math.floor(200 + heat * 55);
-      sb = Math.floor(120 + heat * 135);
-    } else if (p < postStart) {
-      // Flash peak: white-hot maximum
-      const fp = (p - preEnd) / (postStart - preEnd);
-      starR = 27 + fp * 50;
-      starAlpha = 1 - fp * 0.6;
-      sr = sg = sb = 255;
-    } else {
-      // Remnant neutron star — tiny, bluish, rapidly pulsing (pulsar-like)
-      const pulseRate = 8 + (p - postStart) * 4;
-      starR = 2.5 + Math.sin(t * pulseRate) * 1;
-      starAlpha = 0.55 + 0.4 * Math.abs(Math.sin(t * pulseRate));
-      sr = 160; sg = 210; sb = 255;
-    }
-
-    // Star glow
-    const glowR = starR * 4;
-    const gg = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
-    gg.addColorStop(0, `rgba(${sr},${sg},${sb},${starAlpha * 0.25})`);
-    gg.addColorStop(1, `rgba(${sr},${sg},${sb},0)`);
-    ctx.beginPath(); ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
-    ctx.fillStyle = gg; ctx.fill();
-
-    // Star body
-    ctx.beginPath(); ctx.arc(cx, cy, starR, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${sr},${sg},${sb},${starAlpha})`;
-    ctx.fill();
-
-    requestAnimationFrame(draw);
-  }
-  requestAnimationFrame(draw);
-})();
-
-// ======================== Fade In Observer ========================
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+resize();
+drawFrame(0);
+window.addEventListener('resize', () => { resize(); if (reduceMotion) drawFrame(0); });
 </script>
 
 </body>
